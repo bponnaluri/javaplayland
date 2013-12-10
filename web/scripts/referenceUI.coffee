@@ -191,8 +191,8 @@ window.referencePage = (pageSize) ->
 setUpExample = (dive) ->
     text = $(dive).text()
     $(dive).empty()
-    i = document.createElement("div")
-    o = document.createElement("div")
+    i = $('<div></div>')
+    o = $('<div></div>')
 
     $(i).attr({"class":"ei"})
     $(o).attr({"class":"eo"})
@@ -289,8 +289,9 @@ window.AboutPage = () ->
     	$(backFade).remove()
     	$(refContainer).remove()
 
-    backFade = document.createElement("div")
-    refContainer = document.createElement("div")
+
+    backFade = $('<div></div>')
+    refContainer = $('<div></div>')
 
     $(backFade).css({width:'100%',height:'100%',position:'absolute','z-index':'300','background-color':'#000000','opacity':'.5'})
     $(refContainer).css({ width:'60%',height:'60%',left:'30%',top:'30%',position:'absolute','z-index':'301','background-color':'#FFFFFF'})
@@ -299,8 +300,8 @@ window.AboutPage = () ->
     $(backFade).attr({id:'bF'})
     $("body").prepend(refContainer)
 
-    header = document.createElement("div")
-    para = document.createElement("div")
+    header = $('<div></div>')
+    para = $('<div></div>')
 
     $(header).css({"position":"static","overflow":"auto","font-size":"26px","width":"100%","left":"25%","text-align":"center"})
     $(para).css({"overflow":"auto","max-height":"75%","position":"static"})

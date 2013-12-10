@@ -11,18 +11,18 @@
 
 		<script src="web/scripts/referenceUI.js"></script>
 		<script src="web/scripts/codeland.js" ></script>
-		<script src="web/ace/src/ace.js" ></script>
-		<script src="web/ace/src/mode-java.js" ></script>
-		<script src="web/codeInterpreter.js" ></script>
-		<script src="web/playerCodeEditor.js" ></script>
-		<script src="web/gameSelection.js" ></script>
-		<script src="web/gameVisual.js" ></script>
-		<script src="web/gridGameState.js" ></script>
-		<script src="web/paintGameState.js" ></script>
-		<script src="web/gameManager.js" ></script>
-		<script src="web/cloud.js" ></script>
-		<script src="web/bbar.js" ></script>
-		<script src="web/ref.js" ></script>
+		<script src="web/scripts/ace/src/ace.js" ></script>
+		<script src="web/scripts/ace/src/mode-java.js" ></script>
+		<script src="web/scripts/codeInterpreter.js" ></script>
+		<script src="web/scripts/playerCodeEditor.js" ></script>
+		<script src="web/scripts/gameSelection.js" ></script>
+		<script src="web/scripts/gameVisual.js" ></script>
+		<script src="web/scripts/gridGameState.js" ></script>
+		<script src="web/scripts/paintGameState.js" ></script>
+		<script src="web/scripts/gameManager.js" ></script>
+		<script src="web/scripts/cloud.js" ></script>
+		<script src="web/scripts/bbar.js" ></script>
+		<script src="web/scripts/ref.js" ></script>
 		<script src="http://code.jquery.com/qunit/qunit-1.12.0.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
@@ -91,19 +91,50 @@ Professor Angrave: Create simple tests for all the classes.
 */
 		asyncTest("Test referenceUI",function(){
 
-			loadHelper("scripts/playerCodeEditor.js")
-			loadHelper("scripts/referenceUI.js")
-			ok("All files have loaded")
+			start()
+	
+	
+			var sandboxPanel=window.sandBoxPage(15)
 
+			//Check if divs exist
+			ok(sandboxPanel.getInput()!=null)
+			ok(sandboxPanel.getOutput()!=null)
+			ok(sandboxPanel.getBackFade()!=null)
+			ok(sandboxPanel.getRefContainer()!=null)
 
-			console.log("Testing sandboxPage")
-			var sandboxData=window.referencePage()
+			ok(1,"Java sandbox was correctly set up.")
 
-
-				
-		
+			var refPanel=window.referencePage(15)
 			
-			console.log("Hello");
+			ok(refPanel.getBackFade()!=null)
+			ok(refPanel.getBackFade().attr("id")==="bF")
+			ok(refPanel.getRefContainer()!=null)
+			ok(1,"Reference panel was correctly set up")
+
+
+			//Testing cloud.cofee
+			window.playAudio("hello")
+			ok(1,"Finished tests for cloud.coffee")
+
+			//Testing codeInterpreter.coffee
+			var inter=new CodeInterpreter(null)
+			inter.buildNeededParsers
+			inter.identifyCommand(1)
+			inter.scanCommand(1)
+			inter.scanText("asfasdfasdfasdf")
+			ok(1,"Finished tests for codeInterpreter")
+
+
+			ok(0,"Finished tests for codeland.coffee")
+			ok(0,"Finished tests for gameManager.coffee")
+			ok(0,"Finished tests for gameSelection.coffee")
+			ok(0,"Finished tests for gameVisual.coffee")
+			ok(0,"Finished tests for gridGameState.coffee")
+			ok(0,"Finished tests for paintGameState.coffee")
+			ok(0,"Finished tests for playerCodeEditor.coffee")
+
+
+
 	
 
 

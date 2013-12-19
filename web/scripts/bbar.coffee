@@ -34,18 +34,18 @@ window.appendBar = (d) ->
     $(cont).append(ref)
     $(cont).append(select)
     $(cont).append(sand)
-	$(cont).append(edge)
-
-	$(toggleDrawerInOut)
-	$(d).append(cont)
-
-	rPage = ()->referencePage(90)
-	$(ref).click rPage
-
-	$(select).click codeland.showMap
-
-	sPage = ()->sandBoxPage(90)
-	$(sand).click sPage
+    $(cont).append(edge)
 
 
+
+    rPage = ()->referencePage(90)
+    $(ref).click rPage
+    $(select).click codeland.showMap
+
+    sPage = ()->sandBoxPage(90)
+    $(sand).click sPage
+    
+
+    (toggleDrawerInOut)
+    $(d).append(cont)
 

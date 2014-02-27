@@ -208,7 +208,7 @@ class window.EditorManager
             Updates the number of commands remaining for each command.
         ###
         valid = true
-        buttonField = jQuery '#insertButtons'
+        buttonField = $ '#insertButtons'
         for command of @commands
             button = buttonField.find "##{jQuerySelectorEscapedString command}"
             if @commands[command].rawText?
@@ -264,7 +264,7 @@ class window.EditorManager
 
     onEditorCursorMove: (cursorEvent) =>
         if @parameterPopUp == undefined
-            @parameterPopUp = jQuery('#parameter-pop-up')
+            @parameterPopUp = $('#parameter-pop-up')
 
         setTimeout @moveEditorButtons, @moveEditorButtonDelay
 
@@ -281,7 +281,7 @@ class window.EditorManager
         ###
         row = clickEvent.$pos.row
         if @parameterPopUp == undefined
-            @parameterPopUp = jQuery('#parameter-pop-up')
+            @parameterPopUp = $('#parameter-pop-up')
 
         if inBounds
             line = clickEvent.editor.getSession().getLine row
@@ -311,21 +311,21 @@ class window.EditorManager
                 @parameterPopUp.append "<input id='#{id}' type='text' size='5' class='pop-up-inside'>"
                 codeParam = commandInfo.parameters[i - 1]
                 if codeParam != "__"
-                    jQuery("##{id}").val codeParam
+                    $("##{id}").val codeParam
                 if i != numberOfInputs
                     @parameterPopUp.append ','
-                    jQuery("##{id}").keypress(
+                    $("##{id}").keypress(
                         (e) ->
                             if e.which == 13
                                 setTimeout (->
-                                    jQuery(e.currentTarget).next().focus()
+                                    $(e.currentTarget).next().focus()
                                     return), 0
                                 return false
                             return true
                         )
                 else
                     manager = @
-                    jQuery("##{id}").keypress(
+                    $("##{id}").keypress(
                         (e) ->
                             if e.which == 13
                                 setTimeout (->
@@ -336,7 +336,7 @@ class window.EditorManager
                         )
 
             @parameterPopUp.append ')'
-            button = jQuery '<button>', {
+            button = $ '<button>', {
                 id: 'editLine',
                 text: 'Ok',
                 class: 'pop-up-inside',
@@ -344,7 +344,7 @@ class window.EditorManager
             }
             @parameterPopUp.append button.get 0
 
-            editorOffset = jQuery('#ace-editor').position()
+            editorOffset = $('#ace-editor').position()
             gutterOffset = @editor.editor.renderer.$gutterLayer.gutterWidth + \
                 @editor.editor.renderer.$gutterLayer.$padding?.left
             @parameterPopUp.css 'top', "12px"
@@ -356,7 +356,7 @@ class window.EditorManager
                 return
 
             @parameterPopUp.show()
-            setTimeout (-> jQuery("##{command}-parameter-#{1}").focus(); return), 0
+            setTimeout (-> $("##{command}-parameter-#{1}").focus(); return), 0
             clickEvent.stopPropagation()
             return false
         else
@@ -365,11 +365,11 @@ class window.EditorManager
 
     popUpEditLine: (row, command) ->
         if @parameterPopUp == undefined
-            @parameterPopUp = jQuery('#parameter-pop-up')
+            @parameterPopUp = $('#parameter-pop-up')
 
         line = "#{command}("
         for i in [1..@commands[command]['inputs']] by 1
-            line += jQuery("#parameter-pop-up ##{command}-parameter-#{i}").val()
+            line += $("#parameter-pop-up ##{command}-parameter-#{i}").val()
             if i != @commands[command]['inputs']
                 line += ', '
         line += ');'
@@ -443,7 +443,7 @@ class window.PlayerCodeEditor
         @editSession.setUseSoftTabs true
         @editor.setReadOnly !@freeEdit
         if !@freeEdit
-            jQuery("##{@editorDivId} textarea").attr "readonly", "readonly"
+            $("##{@editorDivId} textarea").attr "readonly", "readonly"
 
         @codePrefixLength = 0
         @codeSuffixLength = 0
@@ -738,7 +738,7 @@ class window.PlayerCodeEditor
             argumentFound = false
             for argument of originalArguments
                 if @detectNamedArgument originalArguments[argument]
-                    jQuery.extend true, originalArguments[argument],
+                    $.extend true, originalArguments[argument],
                         argumentDictionary
                     argumentFound = true
                     break

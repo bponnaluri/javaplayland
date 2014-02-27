@@ -43,6 +43,16 @@
         "top":"10%",
         "margin":"0",
         "padding":"0"
+    },
+    "overCSS":{
+        "opacity":".5",
+        "width":"100%",
+        "min-height":"250px",
+        "height":"100%",
+        "position":"inherit",
+        "z-index":"1",
+        "background-color":"#000000"
+
     }
 
 

@@ -38,7 +38,7 @@ window.appendBar = (d) ->
     (toggleDrawerInOut)
     $(d).append(cont)
 
-    $.get 'scripts/bbar.json',(data)->
+    $.get 'scripts/config/bbar.json',(data)->
       $(cont).css(data["cont"])
       $(edge).attr(data["edgeAttr"])
       $(edge).css(data["edgeCss"])

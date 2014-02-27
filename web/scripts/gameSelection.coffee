@@ -1,16 +1,37 @@
 class window.gameSelector
     cont = null
+    cssData=null
     constructor: (@div, @dis) ->
         $("#acelne").remove()
         tmp = document.createElement("div")
         cont = $(tmp)
-        $(tmp).css({'height':'100%', 'overflow-y':'scroll','width':'95%','position':'relative','font-size':"20px"})
+
+        dData=null
+
+        $.get 'scripts/config/gameSelection.json',(data)->
+          #console.log(JSON.stringify(data))
+        $.ajax
+          url: 'scripts/config/gameSelection.json',
+          dataType: 'json',
+          async: false,
+          success: (data)->
+            dData=data
+
+        cssData=dData
+        $(tmp).css(cssData["tmpCSS"])
         $(tmp).attr("id","gameSelection")
         @div.append(tmp)
         return
 
     buildDiv: (count, game, desc, player, canPlay, codeland, questContext) -> #Coded by Lavanya
         span = document.createElement("span")
+
+        console.log(JSON.stringify(cssData))
+
+
+        $(span).css(cssData["spanCSS"])
+
+        '''
         $(span).css {
             "min-width":"450px",
             "min-height":"32px",
@@ -22,7 +43,7 @@ class window.gameSelector
             "font-family":"Monospace",
             "margin:5px",
             "cursor": "pointer"
-        }
+        }'''
 
         $(span).attr("id","select#{game}")
         $(span).attr("class","select#{count}")

@@ -8,8 +8,6 @@ class window.gameSelector
 
         dData=null
 
-        $.get 'scripts/config/gameSelection.json',(data)->
-          #console.log(JSON.stringify(data))
         $.ajax
           url: 'scripts/config/gameSelection.json',
           dataType: 'json',
@@ -109,4 +107,4 @@ class window.gameSelector
         else
             ovr = document.createElement("div")
             $(con).prepend(ovr)
-            $(ovr).css({'opacity':'.5','width':'100%',"min-height":"250px",'height':'100%',position:'inherit','z-index':'1','background-color':'#000000'})
+            $(ovr).css(cssData["overCSS"])

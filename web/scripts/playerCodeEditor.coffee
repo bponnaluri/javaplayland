@@ -24,16 +24,16 @@ class window.EditorManager
             Builds the HTML for, and sets up the functionality of,
             the player code editor.
         ###
-        editorDiv = jQuery "##{@editorDivId}"
+        editorDiv = $ "##{@editorDivId}"
         editorDiv.append '<div id="ace-editor"></div>'
 
         @acelne = document.createElement("div")
         $(@acelne).append '<div id="parameter-pop-up" class="pop-up-container"></div>'
 
         if @editorConfig.buttons.length != 0
-            buttonField = jQuery '<div>', {id: 'buttons'}
+            buttonField = $ '<div>', {id: 'buttons'}
             if $.inArray('insertButtons', @editorConfig.buttons) != -1
-                buttonField.append jQuery('<div>', {
+                buttonField.append $('<div>', {
                     id: 'insertButtons'}).get(0)
             editorDiv.append buttonField.get 0
 
@@ -89,7 +89,7 @@ class window.EditorManager
         if $.inArray('insertButtons', @editorConfig.buttons) == -1
             return
 
-        buttonField = jQuery('#insertButtons')
+        buttonField = $('#insertButtons')
         buttons = []
         if @commands.shorthand?
             for line in @commands.shorthand
@@ -118,7 +118,7 @@ class window.EditorManager
                 line = @editor.createBlankFunctionHeader(command) + ';'
                 funct = codeEditor.insertCommand
 
-            button = jQuery '<button>', {
+            button = $ '<button>', {
                 id: command,
                 value: command,
                 text: "#{line}",
@@ -137,13 +137,13 @@ class window.EditorManager
     addEventListeners: ->
         ed = @editor
         if $.inArray('switchUp', @editorConfig.buttons) != -1
-            jQuery('.ace_uparrow').click ed.button ed.usesCurrentPosition ed.switchUp
+            $('.ace_uparrow').click ed.button ed.usesCurrentPosition ed.switchUp
 
         if $.inArray('switchDown', @editorConfig.buttons) != -1
-            jQuery('.ace_downarrow').click ed.button ed.usesCurrentPosition ed.switchDown
+            $('.ace_downarrow').click ed.button ed.usesCurrentPosition ed.switchDown
 
         if $.inArray('deleteLine', @editorConfig.buttons) != -1
-            jQuery('.ace_xbutton').click ed.button ed.usesTextDocument ed.usesCurrentRow ed.deleteLine
+            $('.ace_xbutton').click ed.button ed.usesTextDocument ed.usesCurrentRow ed.deleteLine
 
         ed.onChangeListener @onStudentCodeChange
         ed.onClickListener @onEditorClick
@@ -165,11 +165,11 @@ class window.EditorManager
 
         # Touch Handlers
         @ongoingTouches = []
-        jQuery('.ace_scroller').bind "touchstart", @handleTouchStart
-        jQuery('.ace_scroller').bind "touchend", @handleTouchEnd
-        jQuery('.ace_scroller').bind "touchcancel", @handleTouchCancel
-        jQuery('.ace_scroller').bind "touchleave", @handleTouchEnd
-        jQuery('.ace_scroller').bind "touchmove", @handleTouchMove
+        $('.ace_scroller').bind "touchstart", @handleTouchStart
+        $('.ace_scroller').bind "touchend", @handleTouchEnd
+        $('.ace_scroller').bind "touchcancel", @handleTouchCancel
+        $('.ace_scroller').bind "touchleave", @handleTouchEnd
+        $('.ace_scroller').bind "touchmove", @handleTouchMove
         return
 
     resetEditor: =>

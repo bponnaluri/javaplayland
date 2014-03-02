@@ -36,7 +36,7 @@ window.objCloud = (dim,par,obj,x,y,tscale,ng,man) ->
         text.innerHTML = "<p style='margin-top:auto;margin-right:auto'>"+par[tipnum]+"</p>"
 
         if tipnum == par.length - 1
-            $(ntr).attr({"src":"img/rarrow.png","width":"15%"})
+            $(ntr).attr(cssData["rArrowAttr"])
 
     lb = () ->
         if tipnum != 0
@@ -44,20 +44,20 @@ window.objCloud = (dim,par,obj,x,y,tscale,ng,man) ->
         
         text.innerHTML = "<p style='margin-top:auto;margin-right:auto'>"+par[tipnum]+"</p>"
         if tipnum == 0
-            $(ntl).attr({"src":"img/larrow.png","width":"15%"})
+            $(ntl).attr(cssData["lArrowAttr"])
 
-    cont = document.createElement("div")
-    text = document.createElement("div")
-    cloud = document.createElement("img")
-    xb = document.createElement("img")
-    xbcloud = document.createElement("img")
-    subbd = document.createElement("div")
+    cont = $('<div></div>')
+    text = $('<div></div>')
+    cloud = $('<div></div>')
+    xb = $('<div></div>')
+    xbcloud = $('<div></div>')
+    subbd = $('<div></div>')
 	
     if par.length > 1
-        ntc = document.createElement("div")
-        nti = document.createElement("img")
-        ntl = document.createElement("img")
-        ntr = document.createElement("img")
+        ntc = $('<div></div>')
+        nti = $('<div></div>')
+        ntl = $('<div></div>')
+        ntr = $('<div></div>')
 
         $(ntc).css({"position":"absolute","z-index":"310","bottom":"-10%","right":"-5%","width":dim/2,"height":dim/7})
         $(nti).attr(cssData["ntiAttr"])
@@ -75,14 +75,14 @@ window.objCloud = (dim,par,obj,x,y,tscale,ng,man) ->
 
         $(ntr).click(() -> rb())
         $(ntr).hover(
-            () -> if(tipnum != par.length - 1) then $(ntr).attr({"src":"img/rarrowhigh.png","width":"15%"})
-            () -> $(ntr).attr({"src":"img/rarrow.png","width":"15%"})
+            () -> if(tipnum != par.length - 1) then $(ntr).attr(cssData["rArrowHighAttr"])
+            () -> $(ntr).attr(cssData["rArrowAttr"])
         )
 
         $(ntl).click(() -> lb())
         $(ntl).hover(
-            () -> if(tipnum != 0) then $(ntl).attr({"src":"img/larrowhigh.png","width":"15%"})
-            () -> $(ntl).attr({"src":"img/larrow.png","width":"15%"})
+            () -> if(tipnum != 0) then $(ntl).attr(cssData["rArrowHighAttr"])
+            () -> $(ntl).attr(cssData["lArrowAttr"])
         )
 		
     if obj = "body"
@@ -92,9 +92,9 @@ window.objCloud = (dim,par,obj,x,y,tscale,ng,man) ->
         $(backdrop).click(() -> $(cont).remove();$(backdrop).remove())
 
     if ng != "none"
-        ngco = document.createElement("div")
-        ngi = document.createElement("img")
-        ngt = document.createElement("div")
+        ngco = $('<div></div>')
+        ngi = $('<img></img>')
+        ngt = $('<div></div>')
         $(ngco).css({"position":"absolute","z-index":"310","bottom":"0%","right":"0%","width":dim/2,"height":dim/7})
         $(ngi).attr(cssData["ngiAttr"])
         $(ngi).css(cssData["ngiCSS"])
@@ -104,7 +104,7 @@ window.objCloud = (dim,par,obj,x,y,tscale,ng,man) ->
         $(ngco).append(ngt)
         $(cont).append(ngco)
 
-        $(ngco).click(() -> man.finishGame();codeland.startGame(ng);$(cont).remove();$(backdrop).remove();)
+        $(ngco).click(() -> man.finishGame();codeland.startGame(ng);$(cont).remove();$(backdrop).remove())
 
     $(subbd).css({"position":"absolute","top":"0%","right":"0%","width":dim/8,"height":dim/8})
     $(xbcloud).attr(cssData["xbcloudAttr"])

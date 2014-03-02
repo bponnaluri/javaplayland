@@ -443,6 +443,7 @@ class GridGameCommands
         @turn direction, line
         @go steps, line
         return
+      
 
     jump: (line) =>
         @gameState.jump @gameState.protagonist, line

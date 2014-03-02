@@ -2,19 +2,35 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/web/scripts/paintGameState.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/playerCodeEditor.js" />
         <item url="file://$PROJECT_DIR$/web/scripts/referenceUI.js" />
         <item url="file://$PROJECT_DIR$/web/scripts/codeInterpreter.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/gameManager.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/codeland.js" />
         <item url="file://$PROJECT_DIR$/web/scripts/gameSelection.js" />
-        <item url="file://$PROJECT_DIR$/web/scripts/ref.js" />
         <item url="file://$PROJECT_DIR$/web/scripts/bbar.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/nodeSetup.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/gridGameState.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/gameVisual.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/cloud.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/ref.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
+      <root url="file://$PROJECT_DIR$/web/scripts/paintGameState.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/playerCodeEditor.js" />
       <root url="file://$PROJECT_DIR$/web/scripts/referenceUI.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/gameManager.js" />
       <root url="file://$PROJECT_DIR$/web/scripts/codeInterpreter.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/codeland.js" />
       <root url="file://$PROJECT_DIR$/web/scripts/gameSelection.js" />
-      <root url="file://$PROJECT_DIR$/web/scripts/ref.js" />
       <root url="file://$PROJECT_DIR$/web/scripts/bbar.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/nodeSetup.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/gameVisual.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/gridGameState.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/cloud.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/ref.js" />
     </CLASSES>
     <SOURCES />
   </library>

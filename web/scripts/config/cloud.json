@@ -86,7 +86,20 @@
         "left":"10%",
         "z-index":"299"
 
+    },
+    "rArrowAttr":{
+        "src":"img/rarrow.png",
+        "width":"15%"
+    },
+    "lArrowAttr":{
+        "src":"img/larrow.png",
+        "width":"15%"
+    },
+    "rArrowHighAttr":{
+        "src":"img/rarrowhigh.png",
+        "width":"15%"
     }
+
 
 
 

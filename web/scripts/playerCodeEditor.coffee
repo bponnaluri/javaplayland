@@ -255,7 +255,7 @@ class window.EditorManager
             $(".ace_downarrow").css({"display":"block"})
 
         $(@acelne).css(
-            {"width":"15px";"max-height":aglh*2.6,
+            {"width":"15px","max-height":aglh*2.6,
             "z-index": 20,"position":"relative",
             "top":aalt-aglh*1.5+"px",
             "left":0+"px","display": "block"})

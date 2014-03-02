@@ -315,11 +315,11 @@ class window.GameVisual
         grid.textAlign = 'center'
         grid.fillStyle = '#A0A0E0'
         for index in [0..config.gridX-1] 
-            if index>0 then text= index; else text = 'x'
+            if index>0 then text= index else text = 'x'
             grid.fillText text,config.border+config.gridUnit*(index+0.5),config.border-config.gridUnit*0.25 
                 
         for index in [0..config.gridY-1] 
-            if index>0 then text= index; else text = 'y'
+            if index>0 then text= index else text = 'y'
             grid.fillText text,config.border-config.gridUnit*0.35,config.border+config.gridUnit*(index+0.5)+6 #Slightly under half the font height
         
         return

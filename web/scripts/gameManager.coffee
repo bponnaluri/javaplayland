@@ -40,23 +40,28 @@ class window.GameManager
         return
 
     setUpGame: ->
+
+      config=null
+      $.ajax
+        url: 'scripts/config/gameManager.json',
+        dataType: 'json',
+        async: false,
+        success: (data)->
+          config=data
         ###
             Internal Function (used only by the code in this file)
 
             Sets up everything for the game to run.
             That is, the code editor, the game visual and the event listeners.
         ###
-        @gameDiv = jQuery @environment.gamediv
+        @gameDiv = $ @environment.gamediv
         @gameDiv.empty()
-        editdiv = document.createElement("div")
-        vis = document.createElement("div")
-        butdiv = document.createElement("div")
+        editdiv = $('<div></div>')
+        vis =  $('<div></div>')
+        butdiv =  $('<div></div>')
 
         $(editdiv).attr({'id':@editorDiv,'class':'code_editor'})
-        $(editdiv).css({
-            width:'60%',height:'80%','position':'absolute',
-            'top':'10%','left':'3.3%',"background-color":"#003366", ###366CA3###
-            "border":"4px double #3F80C0"})
+        $(editdiv).css(data["editDivCSS"])
 
         @gameDiv.append(editdiv)
 

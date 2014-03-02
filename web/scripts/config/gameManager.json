@@ -1,0 +1,13 @@
+{
+    "editDivCSS":{
+        "width":"60%",
+        "height":"80%",
+        "position":"absolute",
+        "top":"10%",
+        "left":"3.3%",
+        "background-color":"#003366",
+        "border":"4px double #3F80C0"
+    }
+
+
+}

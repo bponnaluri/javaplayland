@@ -1,24 +1,32 @@
 window.appendBar = (d) ->
 
+    config=null
+    $.ajax
+      url: 'scripts/config/gameSelection.json',
+      dataType: 'json',
+      async: false,
+      success: (data)->
+        config=data
 
     toggleDrawerInOut = () ->
-        if $(edge).attr("src") == "img/barin.png"
-            $(cont).animate({"left":"0px"})
-            $(cont).animate({"left":"-10px"})
-            $(edge).attr({"src":"img/barout.png"})
+        cfg=config["drawerToggle"]
+        if $(edge).attr("src") == cfg["inImg"]
+            $(cont).animate(cfg["inAnim"])
+            $(edge).attr({"src":cfg["outImg"]})
         else
-            $(cont).animate({"left":"0px"})
-            $(cont).animate({"left":"-150px"})
-            $(edge).attr({"src":"img/barin.png"})
+            $(cont).animate(cfg["outAnim"])
+            $(edge).attr({"src":cfg["inImg"]})
         return false
 
 
-    cont = document.createElement("div")
-    edge = document.createElement("img")
+    cont = $('<div></div>')
+    edge=$('<img></img>')
 
-    ref = document.createElement("img")
-    select = document.createElement("img")
-    sand = document.createElement("img")
+    ref =$('<img></img>')
+    select=$('<img></img>')
+
+    select =$('<img></img>')
+    sand=$('<img></img>')
 
 
     $(cont).append(ref)
@@ -27,27 +35,23 @@ window.appendBar = (d) ->
     $(cont).append(edge)
 
 
-    rPage = ()->referencePage(90)
+    rPage = ()->referencePage(config["pSize"])
     $(ref).click rPage
     $(select).click codeland.showMap
 
-    sPage = ()->sandBoxPage(90)
+    sPage = ()->sandBoxPage(config["pSize"])
     $(sand).click sPage
     
 
     (toggleDrawerInOut)
     $(d).append(cont)
 
-    $.get 'scripts/config/bbar.json',(data)->
-      $(cont).css(data["cont"])
-      $(edge).attr(data["edgeAttr"])
-      $(edge).css(data["edgeCss"])
-      $(ref).attr(data["refAttr"])
-      $(ref).css(data["refCSS"])
-      $(sand).css(data["sandCSS"])
-      $(select).attr(data["selectAttr"])
-      $(select).css(data["selectCSS"])
-      #console.log(data);
-
-
+    $(cont).css(config["cont"])
+    $(edge).attr(config["edgeAttr"])
+    $(edge).css(config["edgeCss"])
+    $(ref).attr(config["refAttr"])
+    $(ref).css(config["refCSS"])
+    $(sand).css(config["sandCSS"])
+    $(select).attr(config["selectAttr"])
+    $(select).css(config["selectCSS"])
 

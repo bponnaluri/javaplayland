@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/web/scripts/referenceUI.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/codeInterpreter.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/gameSelection.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/ref.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/bbar.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/web/scripts/referenceUI.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/codeInterpreter.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/gameSelection.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/ref.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/bbar.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

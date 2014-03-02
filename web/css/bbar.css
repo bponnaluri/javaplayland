@@ -1,0 +1,38 @@
+#cont {
+    "width":"150px";
+    "height":'50px';
+    'position':'absolute';
+    'top':'0%';
+    'left':'-100px';
+    "z-index":"280";
+    "background-color":"#003366";
+    "border-top":"1px solid black";
+    "border-bottom":"1px solid black"
+}
+
+#edge {
+    'position':'absolute';
+    'top':'-0px';
+    'right':'-30px';
+    'height':'50px';
+}
+
+#ref {
+    "position":"absolute";
+    "top":"6.6%";
+    "right":"65%";
+}
+
+#sand{
+    "position":"absolute";
+    "top":"6.6%";
+    "right":"35%";
+}
+
+#select{
+    "position":"absolute";
+    "display":"none";
+    "bottom":"6.6%";
+    "right":"5%";
+
+}

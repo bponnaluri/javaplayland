@@ -16,15 +16,6 @@ root = exports ? this.codeland = {}
 # root.UIcont is the main div codeland has to work with.
 root.UIcont = null
 
-# Internet Explorer does not support console.log.
-# The following code was an attempt to work around this, I cannot remember how it failed.
-# if ( ! window.console)
-#     window.console= { log: -> }
-
-
-# Chrome support: 'this' must be the console object
-# This also failed somehow, I believe it was not logging messages correctly.
-# log = (mesg)-> console.log mesg
 
 root.initialize = (UIcont) ->
     ###
@@ -58,8 +49,9 @@ root.initializeDoppio = ->
             Handles the progress bar and displaying what part of Doppio is loading
             to the user.
         ###
+        displayConst=391 #What does this do???
         count = count + 1
-        display = Math.floor((100*count) / 391)
+        display = Math.floor((100*count) / displayConst)
         if (display == 100)
             display = "Starting Java Virtual Machine..."
         else display = "Opening " + display
@@ -116,13 +108,7 @@ root.waitForWrapper = (callback) ->
     root.wrapperCompiledCallback = callback
     return
 
-root.reference = () ->
-    ###
-        ???
-        Could the author (or whomever knows) provide here information as to
-        what this function does?
-    ###
-    return
+
 
 # FRONTEND UI
 root.drawGameMap = (player) ->
@@ -145,38 +131,37 @@ root.drawGameMap = (player) ->
     count = 0
     addGameToMap = (game, questContext) ->
         count = count + 1
+        console.log("Count:"+count)
         sel.buildDiv count, game, descriptions[game], player.games[game], root.canPlay(game), codeland, questContext
         return
     qcount = 0
 
+    config=null
+    $.ajax
+      url: 'scripts/config/codeland.json',
+      dataType: 'json',
+      async: false,
+      success: (data)->
+        config=data
+
     for quest in root.quests
-        span = jQuery '<span>', {
-            title: "Click here to hide/show all levels in this quest."
-            alt: "Click here to hide/show all levels in this quest.",
+        span = $ '<span>', {
+            title: config["questSpan"]["title"]
+            alt: config["questSpan"]["alt"],
             id: "#{quest.title}"
         }
-        span.css {
-            "min-width": "450px",
-            "min-height": "32px",
-            "padding" : "5px",
-            "display": "inline-block",
-            "white-space": "nowrap",
-            "border":"1px dashed orange",
-            "background-color": "#ffa500",
-            "text-align": "center",
-            "font-family": "Monospace",
-            "margin: 5px",
-            "cursor": "pointer"
-        }
+        span.css (
+            config["questSpan"]["css"]
+        )
 
         $(tmp1).append(span)
         span.append """<b>QUEST #{++qcount}: #{quest.title}</b>""" #Lavanya
 
         span.click (clickEvent) ->
-            jQuery("span[id='#{clickEvent.currentTarget.id} Container']").children().toggle()
+            $("span[id='#{clickEvent.currentTarget.id} Container']").children().toggle()
             return
 
-        games = jQuery '<span>', {
+        games = $ '<span>', {
             id: "#{quest.title} Container"
         }
 
@@ -186,8 +171,8 @@ root.drawGameMap = (player) ->
         jQuery(tmp1).append games
         $("<br><br>").appendTo tmp1 #Lavanya
 
-    $('<span style="font-size:100%" class="cursiveHeadline">Choose a level below.</span><br><br>').prependTo tmp1
-    $('<span style="font-size:200%" class="cursiveHeadline">CodeMoo Java Game</span><br>').prependTo tmp1
+    $(config["header"]["h1"]).prependTo tmp1
+    $(config["header"]["h2"]).prependTo tmp1
 
     $('#gameSelection').animate {
         scrollTop: root.gameSelectionScrollPosition

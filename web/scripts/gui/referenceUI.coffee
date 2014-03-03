@@ -16,8 +16,9 @@ class sandBoxInfo
     constructor: (pSize) ->
         pageSize= pSize
         dData=null
+        console.log("Starting")
         $.ajax
-          url: 'scripts/config/referenceUI.json',
+          url: 'config/referenceUI.json',
           dataType: 'json',
           async: false,
           success: (data)->

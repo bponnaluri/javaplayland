@@ -9,22 +9,28 @@
 	<div id="qunit"></div>
 	<div id="qunit-fixture"></div>
 
-		<script src="web/scripts/referenceUI.js"></script>
-		<script src="web/scripts/codeland.js" ></script>
-		<script src="web/scripts/ace/src/ace.js" ></script>
-		<script src="web/scripts/ace/src/mode-java.js" ></script>
-		<script src="web/scripts/codeInterpreter.js" ></script>
-		<script src="web/scripts/playerCodeEditor.js" ></script>
-		<script src="web/scripts/gameSelection.js" ></script>
-		<script src="web/scripts/gameVisual.js" ></script>
-		<script src="web/scripts/gridGameState.js" ></script>
-		<script src="web/scripts/paintGameState.js" ></script>
-		<script src="web/scripts/gameManager.js" ></script>
-		<script src="web/scripts/cloud.js" ></script>
-		<script src="web/scripts/bbar.js" ></script>
-		<script src="web/scripts/ref.js" ></script>
+		<script src="scripts/gui/referenceUI.js"></script>
+		<script src="codeland.js" ></script>
+		<script src="scripts/ace/src/ace.js" ></script>
+		<script src="scripts/ace/src/mode-java.js" ></script>
+		<script src="codeInterpreter.js" ></script>
+        <script src="scripts/gui/referenceUI.js"></script>
+        <script src="codeland.js" ></script>
+        <script src="scripts/model/codelandStorage.js"></script>
+        <script src="scripts/ace/src/ace.js" ></script>
+        <script src="scripts/ace/src/mode-java.js" ></script>
+        <script src="codeInterpreter.js" ></script>
+        <script src="scripts/gui/playerCodeEditor.js" ></script>
+        <script src="scripts/gui/gameSelection.js" ></script>
+        <script src="scripts/gui/gameVisual.js" ></script>
+        <script src="gridGameState.js" ></script>
+        <script src="scripts/gui/paintGameState.js" ></script>
+        <script src="scripts/gui/gameManager.js" ></script>
+        <script src="scripts/gui/cloud.js" ></script>
+        <script src="scripts/gui/menuBar.js" ></script>
+        <script src="scripts/gui/ref.js" ></script>
 		<script src="http://code.jquery.com/qunit/qunit-1.12.0.js"></script>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
 
 		
 	<script>
@@ -75,7 +81,7 @@
 			loadHelper("scripts/paintGameState.js");
 			loadHelper("scripts/gameManager.js");
 			loadHelper("scripts/cloud.js");
-			loadHelper("scripts/bbar.js");
+			loadHelper("scripts/menuBar.js");
 			loadHelper("scripts/ref.js");
 			ok(1,"All files have loaded")
 

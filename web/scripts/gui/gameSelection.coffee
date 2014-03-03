@@ -17,13 +17,12 @@ class window.gameSelector
 
         cssData=dData
         $(tmp).css(cssData["tmpCSS"])
-        $(tmp).attr("id","gameSelection")
+        $(tmp).attr(cssData["tmpAttr"])
         @div.append(tmp)
         return
 
     buildDiv: (count, game, desc, player, canPlay, codeland, questContext) -> #Coded by Lavanya
-        span = document.createElement("span")
-
+        span = $('<span></span>')
         $(span).css(cssData["spanCSS"])
 
         $(span).attr("id","select#{game}")
@@ -34,7 +33,7 @@ class window.gameSelector
         if player?.passed is true
             $(span).append """<b><font color="white">#{count}: #{desc.title}</font></b> """ #Coded by Lavanya
             src = 'img/star.png'
-            img = jQuery '<img>', {
+            img = $ '<img>', {
                 id: 'star',
                 src: src,
                 style: 'max-height:16px',
@@ -45,7 +44,7 @@ class window.gameSelector
             $(span).append """<font color="white">#{count}: #{desc.title}</font>""" #Coded by Lavanya
 
     buildAn: (con,canPlay) ->
-        tmp2 = document.createElement("img")
+        tmp2 = $('<img></img>')
         $(con).append(tmp2)
         $(tmp2).css(cssData["tmp2CSS"])
         derp = () ->

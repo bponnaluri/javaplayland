@@ -2,99 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e3efbbe-2425-400c-960a-3c21e7efab6c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/scripts/gui/codeland.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/scripts/model/codelandStorage.coffee" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/css/bbar.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/css/cloud.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/css/grainger.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/scripts/codeland.coffee" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/TestDriver.html" afterPath="$PROJECT_DIR$/web/TestDriver.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/css/grainger_edited.jpg" afterPath="$PROJECT_DIR$/web/img/grainger_edited.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/barin.png" afterPath="$PROJECT_DIR$/web/img/interface/barin.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/barout.png" afterPath="$PROJECT_DIR$/web/img/interface/barout.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/blackPixel.png" afterPath="$PROJECT_DIR$/web/img/game/tiles/blackPixel.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/blackPixelBorder.png" afterPath="$PROJECT_DIR$/web/img/game/tiles/blackPixelBorder.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/bluePixel.png" afterPath="$PROJECT_DIR$/web/img/game/tiles/bluePixel.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/bluePixelBorder.png" afterPath="$PROJECT_DIR$/web/img/game/tiles/bluePixelBorder.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/cloud.png" afterPath="$PROJECT_DIR$/web/img/interface/cloud.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/cx-usable.png" afterPath="$PROJECT_DIR$/web/img/codeIn/cx-usable.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/cx.png" afterPath="$PROJECT_DIR$/web/img/codeIn/cx.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/da-usable.png" afterPath="$PROJECT_DIR$/web/img/codeIn/da-usable.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/da.png" afterPath="$PROJECT_DIR$/web/img/codeIn/da.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/dot.png" afterPath="$PROJECT_DIR$/web/img/codeIn/dot.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/enlarge1.png" afterPath="$PROJECT_DIR$/web/img/interface/enlarge1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/enlarge2.png" afterPath="$PROJECT_DIR$/web/img/interface/enlarge2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/fallen.png" afterPath="$PROJECT_DIR$/web/img/interface/fallen.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/greenPixel.png" afterPath="$PROJECT_DIR$/web/img/game/tiles/greenPixel.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/greenPixelBorder.png" afterPath="$PROJECT_DIR$/web/img/game/tiles/greenPixelBorder.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/header.jpg" afterPath="$PROJECT_DIR$/web/img/old/header.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/header.png" afterPath="$PROJECT_DIR$/web/img/old/header.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/headert.png" afterPath="$PROJECT_DIR$/web/img/old/headert.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/larrow.png" afterPath="$PROJECT_DIR$/web/img/interface/larrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/larrowhigh.png" afterPath="$PROJECT_DIR$/web/img/interface/larrowhigh.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/lightBluePixel.png" afterPath="$PROJECT_DIR$/web/img/game/tiles/lightBluePixel.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/lightBluePixelBorder.png" afterPath="$PROJECT_DIR$/web/img/game/tiles/lightBluePixelBorder.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/listarrow1.png" afterPath="$PROJECT_DIR$/web/img/interface/listarrow1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/listarrow2.png" afterPath="$PROJECT_DIR$/web/img/interface/listarrow2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/npc3_bk1.png" afterPath="$PROJECT_DIR$/web/img/game/characters/npc3_bk1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/npc3_bk2.png" afterPath="$PROJECT_DIR$/web/img/game/characters/npc3_bk2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/npc3_fr1.png" afterPath="$PROJECT_DIR$/web/img/game/characters/npc3_fr1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/npc3_fr2.png" afterPath="$PROJECT_DIR$/web/img/game/characters/npc3_fr2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/npc3_lf1.png" afterPath="$PROJECT_DIR$/web/img/game/characters/npc3_lf1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/npc3_lf2.png" afterPath="$PROJECT_DIR$/web/img/game/characters/npc3_lf2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/npc3_rt1.png" afterPath="$PROJECT_DIR$/web/img/game/characters/npc3_rt1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/npc3_rt2.png" afterPath="$PROJECT_DIR$/web/img/game/characters/npc3_rt2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/pinkPixel.png" afterPath="$PROJECT_DIR$/web/img/game/tiles/pinkPixel.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/pinkPixelBorder.png" afterPath="$PROJECT_DIR$/web/img/game/tiles/pinkPixelBorder.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/pit.png" afterPath="$PROJECT_DIR$/web/img/game/tiles/pit.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/pit2.png" afterPath="$PROJECT_DIR$/web/img/game/tiles/pit2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/purplePixel.png" afterPath="$PROJECT_DIR$/web/img/game/tiles/purplePixel.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/purplePixelBorder.png" afterPath="$PROJECT_DIR$/web/img/game/tiles/purplePixelBorder.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/rarrow.png" afterPath="$PROJECT_DIR$/web/img/interface/rarrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/rarrowhigh.png" afterPath="$PROJECT_DIR$/web/img/interface/rarrowhigh.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/redPixel.png" afterPath="$PROJECT_DIR$/web/img/game/tiles/redPixel.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/redPixelBorder.png" afterPath="$PROJECT_DIR$/web/img/game/tiles/redPixelBorder.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/shadow.png" afterPath="$PROJECT_DIR$/web/img/interface/shadow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/shrink1.png" afterPath="$PROJECT_DIR$/web/img/interface/shrink1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/shrink2.png" afterPath="$PROJECT_DIR$/web/img/interface/shrink2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/subcloud.png" afterPath="$PROJECT_DIR$/web/img/interface/subcloud.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/subcloudlong.png" afterPath="$PROJECT_DIR$/web/img/interface/subcloudlong.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/ua-usable.png" afterPath="$PROJECT_DIR$/web/img/interface/ua-usable.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/ua.png" afterPath="$PROJECT_DIR$/web/img/interface/ua.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/vicflag1.png" afterPath="$PROJECT_DIR$/web/img/game/vicflag1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/vicflag2.png" afterPath="$PROJECT_DIR$/web/img/game/vicflag2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/whitePixel.png" afterPath="$PROJECT_DIR$/web/img/game/tiles/whitePixel.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/wmn1_bk1.gif" afterPath="$PROJECT_DIR$/web/img/game/characters/wmn1_bk1.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/wmn1_bk2.gif" afterPath="$PROJECT_DIR$/web/img/game/characters/wmn1_bk2.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/wmn1_fr1.gif" afterPath="$PROJECT_DIR$/web/img/game/characters/wmn1_fr1.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/wmn1_fr2.gif" afterPath="$PROJECT_DIR$/web/img/game/characters/wmn1_fr2.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/wmn1_lf1.gif" afterPath="$PROJECT_DIR$/web/img/game/characters/wmn1_lf1.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/wmn1_lf2.gif" afterPath="$PROJECT_DIR$/web/img/game/characters/wmn1_lf2.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/wmn1_rt1.gif" afterPath="$PROJECT_DIR$/web/img/game/characters/wmn1_rt1.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/wmn1_rt2.gif" afterPath="$PROJECT_DIR$/web/img/game/characters/wmn1_rt2.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/x.png" afterPath="$PROJECT_DIR$/web/img/interface/x.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/yellowPixel.png" afterPath="$PROJECT_DIR$/web/img/game/tiles/yellowPixel.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/yellowPixelBorder.png" afterPath="$PROJECT_DIR$/web/img/game/tiles/yellowPixelBorder.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/scripts/bbar.coffee" afterPath="$PROJECT_DIR$/web/scripts/gui/menuBar.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/scripts/cloud.coffee" afterPath="$PROJECT_DIR$/web/scripts/gui/cloud.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/scripts/codeInterpreter.coffee" afterPath="$PROJECT_DIR$/web/scripts/model/codeInterpreter.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/scripts/gameManager.coffee" afterPath="$PROJECT_DIR$/web/scripts/gui/gameManager.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/scripts/gameSelection.coffee" afterPath="$PROJECT_DIR$/web/scripts/gui/gameSelection.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/scripts/gameVisual.coffee" afterPath="$PROJECT_DIR$/web/scripts/gui/gameVisual.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/scripts/gridGameState.coffee" afterPath="$PROJECT_DIR$/web/scripts/model/gridGameState.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/scripts/nodeSetup.coffee" afterPath="$PROJECT_DIR$/web/scripts/setup/nodeSetup.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/scripts/paintGameState.coffee" afterPath="$PROJECT_DIR$/web/scripts/gui/paintGameState.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/scripts/playerCodeEditor.coffee" afterPath="$PROJECT_DIR$/web/scripts/gui/playerCodeEditor.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/scripts/ref.coffee" afterPath="$PROJECT_DIR$/web/scripts/gui/ref.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/scripts/referenceUI.coffee" afterPath="$PROJECT_DIR$/web/scripts/gui/referenceUI.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coffeepot.sh" afterPath="$PROJECT_DIR$/coffeepot.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/config/gameSelection.json" afterPath="$PROJECT_DIR$/web/scripts/config/gameSelection.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/main.js" afterPath="$PROJECT_DIR$/web/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/config/referenceUI.json" afterPath="$PROJECT_DIR$/web/scripts/config/referenceUI.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/style.css" afterPath="$PROJECT_DIR$/web/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/gui/paintGameState.coffee" afterPath="$PROJECT_DIR$/web/scripts/gui/paintGameState.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="javaplayland.iws" />
@@ -117,13 +26,13 @@
     <favorites_list name="javaplayland" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.2731183">
+    <splitter split-orientation="vertical" split-proportion="0.28817204">
       <split-first>
         <leaf>
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/web/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="36" column="0" selection-start="1237" selection-end="1237" vertical-scroll-proportion="1.3280423" vertical-offset="289" max-vertical-offset="1005">
+                <state line="36" column="0" selection-start="1237" selection-end="1237" vertical-scroll-proportion="1.2364532" vertical-offset="289" max-vertical-offset="1005">
                   <folding />
                 </state>
               </provider>
@@ -133,10 +42,19 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/web/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="19" column="46" selection-start="786" selection-end="786" vertical-scroll-proportion="0.25755167" vertical-offset="123" max-vertical-offset="780">
+                <state line="19" column="46" selection-start="786" selection-end="786" vertical-scroll-proportion="0.0" vertical-offset="121" max-vertical-offset="780">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="paintGameState.coffee" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/web/scripts/gui/paintGameState.coffee">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="54" column="28" selection-start="1838" selection-end="1838" vertical-scroll-proportion="0.3398374" vertical-offset="601" max-vertical-offset="4080">
                   <folding />
                 </state>
               </provider>
@@ -180,7 +98,6 @@
         <option value="$PROJECT_DIR$/web/scripts/gameManager.coffee" />
         <option value="$PROJECT_DIR$/web/scripts/config/gameSelection.json" />
         <option value="$PROJECT_DIR$/web/scripts/gameSelection.coffee" />
-        <option value="$PROJECT_DIR$/web/scripts/gui/paintGameState.coffee" />
         <option value="$PROJECT_DIR$/web/scripts/paintGameState.coffee" />
         <option value="$PROJECT_DIR$/web/scripts/gui/codeland.coffee" />
         <option value="$PROJECT_DIR$/TestDriver.html" />
@@ -195,11 +112,12 @@
         <option value="$PROJECT_DIR$/web/css/style.css" />
         <option value="$PROJECT_DIR$/web/index.html" />
         <option value="$PROJECT_DIR$/web/main.js" />
+        <option value="$PROJECT_DIR$/web/scripts/gui/paintGameState.coffee" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="969" />
+    <option name="width" value="974" />
     <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -276,6 +194,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaplayland" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaplayland" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -404,15 +344,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="969" height="1048" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="974" height="1048" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21868365" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2777191" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -421,6 +360,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -644,9 +584,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/model/gridGameState.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6960">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6960" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/config/referenceUI.json">
@@ -656,11 +594,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/gui/referenceUI.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="16" selection-start="576" selection-end="576" vertical-scroll-proportion="0.0" vertical-offset="134" max-vertical-offset="6180">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
+        <state line="26" column="16" selection-start="576" selection-end="576" vertical-scroll-proportion="0.0" vertical-offset="134" max-vertical-offset="6180" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/gui/referenceUI.coffee">
@@ -673,13 +607,6 @@
         <state line="3" column="0" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="8460" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/TestDriver.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="58" selection-start="539" selection-end="539" vertical-scroll-proportion="0.4225352" vertical-offset="90" max-vertical-offset="2325">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/model/codelandStorage.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="246" selection-end="246" vertical-scroll-proportion="0.20797227" vertical-offset="0" max-vertical-offset="6555" />
@@ -687,39 +614,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="4" selection-start="1126" selection-end="1126" vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="3000">
-          <folding />
-        </state>
+        <state line="58" column="4" selection-start="1126" selection-end="1126" vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="3000" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/gui/cloud.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="189" selection-end="344" vertical-scroll-proportion="0.2658228" vertical-offset="0" max-vertical-offset="2175">
-          <folding>
-            <marker date="1393721904018" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1393721904018" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1393721904018" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
+        <state line="7" column="0" selection-start="189" selection-end="344" vertical-scroll-proportion="0.2658228" vertical-offset="0" max-vertical-offset="2175" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/gui/codeland.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="42" selection-start="4479" selection-end="4479" vertical-scroll-proportion="1.309227" vertical-offset="1620" max-vertical-offset="4110">
-          <folding />
-        </state>
+        <state line="143" column="42" selection-start="4479" selection-end="4479" vertical-scroll-proportion="1.309227" vertical-offset="1620" max-vertical-offset="4110" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1237" selection-end="1237" vertical-scroll-proportion="1.3280423" vertical-offset="289" max-vertical-offset="1005">
+        <state line="36" column="0" selection-start="1237" selection-end="1237" vertical-scroll-proportion="1.2364532" vertical-offset="289" max-vertical-offset="1005">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="46" selection-start="786" selection-end="786" vertical-scroll-proportion="0.25755167" vertical-offset="123" max-vertical-offset="780">
+        <state line="19" column="46" selection-start="786" selection-end="786" vertical-scroll-proportion="0.0" vertical-offset="121" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/scripts/gui/paintGameState.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="28" selection-start="1838" selection-end="1838" vertical-scroll-proportion="0.3398374" vertical-offset="601" max-vertical-offset="4080">
           <folding />
         </state>
       </provider>

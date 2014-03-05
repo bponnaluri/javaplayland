@@ -52,8 +52,7 @@ class window.PaintGameState
 
             Returns a handle to this games commands (a class).
         ###
-        return @gameCommands/var/www/javaplayland/web/scripts/gui
-
+        return @gameCommands
     clock: =>
         ###
             Internal Function (used only by the code in this file)

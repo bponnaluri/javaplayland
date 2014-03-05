@@ -205,7 +205,7 @@ root.startGame = (game) ->
         @param game
             The game to start.
     ###
-    $('#select').show() #Lavanya
+    $('#select').show() #Shows the "Treasure Map" icon in the top bar
     console.log("Starting #{game}")
     for quest, index in root.quests
         found = quest.games.indexOf game

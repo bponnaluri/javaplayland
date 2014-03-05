@@ -26,6 +26,7 @@ window.initialize = (UIcont) ->
         @param UICont
             A JQuery div where everything created by codeland will live.
     ###
+    console.log("Loading")
     $('#copyrightinfo').click -> window.AboutPage()
     root.gameSelectionScrollPosition = 0
 

@@ -4,8 +4,7 @@
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/web/scripts/gui/referenceUI.js" />
         <item url="file://$PROJECT_DIR$/web/scripts/model/codelandStorage.js" />
-        <item url="file://$PROJECT_DIR$/web/scripts/codeland.js" />
-        <item url="file://$PROJECT_DIR$/web/scripts/gridGameState.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/gui/paintGameState.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -13,6 +12,7 @@
       <root url="file://$PROJECT_DIR$/web/scripts/model/codelandStorage.js" />
       <root url="file://$PROJECT_DIR$/web/scripts/gui/codeland.js" />
       <root url="file://$PROJECT_DIR$/web/scripts/model/gridGameState.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/gui/paintGameState.js" />
     </CLASSES>
     <SOURCES />
   </library>

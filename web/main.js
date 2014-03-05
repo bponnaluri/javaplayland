@@ -1,9 +1,19 @@
 
 $(document).ready(function(){
+
+    $.ajax({
+        url:"scripts/model/codelandStorage.js",
+        dataType:"script",
+        async:false,
+        success:function(d){
+            //window.initialize($('#UI')[0])
+        }
+    })
+
     $.ajax({
         url: '../files.txt',
         dataType:"text",
-        async:"false",
+        async:false,
         success:function(data){
             var files=data.split("\n")
             for(var i=0;i<files.length;i++){
@@ -13,12 +23,14 @@ $(document).ready(function(){
                         if(files[i].length!=0){
                             console.log("Loading file:"+files[i])
                             console.log(files[i].length)
-                            var s = document.createElement("script");
-                            s.type = "text/javascript";
-                            s.src = "../"+files[i]
-                            // Use any selector
-                            $("head").append("")
-                            document.getElementsByTagName("head")[0].appendChild(s);                         console.log(s)
+                            $.ajax({
+                                url:files[i],
+                                dataType:"script",
+                                async:false,
+                                success:function(d){
+                                    console.log("Loaded")
+                                }
+                            })
                         }
 
                     }
@@ -28,6 +40,10 @@ $(document).ready(function(){
             }
         }
     })
+
+
+    window.initialize($('#UI')[0])
+
 
     $("html").css({height:'100%',width:'100%','margin':'0','padding':'0','overflow':'hidden'})
 
@@ -42,5 +58,5 @@ $(document).ready(function(){
             $('#title').css({height:"20%"})
     }, false)
 
-    window.initialize($('#UI')[0])
+  //
 });

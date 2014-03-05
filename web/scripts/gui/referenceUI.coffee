@@ -10,12 +10,22 @@ class sandBoxInfo
     refContainer = null
     input= null
     output= null
-    pageSize= 0 
+    pageSize= 0
+    cssData=null
 
     constructor: (pSize) ->
         pageSize= pSize
+        dData=null
+        console.log("Starting")
+        $.ajax
+          url: 'config/referenceUI.json',
+          dataType: 'json',
+          async: false,
+          success: (data)->
+            dData=data
+        cssData=dData
 
-    ''' 
+    '''
     This sets up the IO area.
     @param pageSize Represents the size of the window.
     '''
@@ -45,7 +55,7 @@ class sandBoxInfo
 
     setupBackFade: () ->
         backFade = $('<div></div>')
-        $(backFade).css("width:'100%',height:'100%',position:'absolute','z-index':'300','background-color':'#000000','opacity':'.5'")
+        $(backFade).css(cssData["backFadeCSS"])
         $("body").prepend(backFade)
         $(backFade).attr({id:'bF'})
 
@@ -54,8 +64,8 @@ class sandBoxInfo
         en2=$('<img></img>')
         $(en1).attr({'src':'img/enlarge1.png',class:'en'})
         $(en2).attr({'src':'img/enlarge1.png',class:'en'})
-        $(en1).css({position:'absolute',right:'4px',top:'4px',"z-index":"320"})
-        $(en2).css({position:'absolute',right:'4px',top:'4px',"z-index":"320"})
+        $(en1).css(cssData["en1CSS"])
+        $(en2).css(cssData["en2CSS"])
         $(input).append(en1)
         $(output).append(en2)
 
@@ -76,6 +86,7 @@ class sandBoxInfo
    @param pageSize Represents the size of the input and output areas on the display panel.
 '''
 window.sandBoxPage = (pageSize) ->
+
 
     sPanel= new sandBoxInfo(pageSize)
     sPanel.setupInput()
@@ -233,7 +244,7 @@ setUpJavaSandbox = (input, output, texti) ->
     log = (mesg) -> console.log mesg
 
 
-    run = jQuery '<img>', {
+    run = $ '<img>', {
         id: 'runCode'+editorCount,
         src: 'img/freeware/button_play_green-48px.png',
         css: {'max-height':'19%', 'display':'block', 'min-height': '24px'},
@@ -241,15 +252,15 @@ setUpJavaSandbox = (input, output, texti) ->
         title:'Run the program',
         click: (e) ->
             textOutput.text 'Running...'
-            jQuery(this).hide()
-            jQuery(this).siblings("img").show()
+            $(this).hide()
+            $(this).siblings("img").show()
 
             msg = ''
             finished_cb = =>
                 #Ensure "Running..." is removed even if nothing was printed by the Java program
                 stdout('')
-                jQuery(this).show()
-                jQuery(this).siblings("img").hide()
+                $(this).show()
+                $(this).siblings("img").hide()
             codeland.doppioAPI.abort()
             codeland.doppioAPI.setOutputFunctions stdout, log
             srcText  = sandBoxEditor.getStudentCode()
@@ -262,7 +273,7 @@ setUpJavaSandbox = (input, output, texti) ->
             e.preventDefault()
             return
     }
-    abort = jQuery '<img>', {
+    abort = $ '<img>', {
         id: 'abortCode'+editorCount,
         src: 'img/freeware/button_stop_red-48px.png',
         css: {'max-height':'19%', 'display':'block', 'min-height': '24px'},
@@ -271,8 +282,8 @@ setUpJavaSandbox = (input, output, texti) ->
         click: (e) ->
             aborted = =>
                 stdout("Stopped")
-                jQuery(this).siblings("img").show()
-                jQuery(this).hide()
+                $(this).siblings("img").show()
+                $(this).hide()
             codeland.doppioAPI.abort(aborted)
             e.preventDefault()
             return
@@ -286,8 +297,8 @@ setUpJavaSandbox = (input, output, texti) ->
 window.AboutPage = () ->
 
 	closeClick = () ->
-    	$(backFade).remove()
-    	$(refContainer).remove()
+    $(backFade).remove()
+    $(refContainer).remove()
 
 
     backFade = $('<div></div>')

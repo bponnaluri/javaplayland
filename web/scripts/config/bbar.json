@@ -45,7 +45,15 @@
     },
     "selectCSS":{
         "position":"absolute","display":"none","bottom":"6.6%","right":"5%"
-    }
+    },
+    "drawerToggle":{
+      "inImg":"img/barin.png",
+      "inAnim":{"left":"-10px"},
+      "outImg":"img/barout.png",
+      "outAnim":{"right":"-150px"}
+
+    },
+    "pSize":"90"
 
 
 

@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/web/scripts/gui/referenceUI.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/model/codelandStorage.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/codeland.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/gridGameState.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/web/scripts/gui/referenceUI.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/model/codelandStorage.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/gui/codeland.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/model/gridGameState.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

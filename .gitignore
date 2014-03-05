@@ -5,7 +5,7 @@
 *.DS_Store
 node_modules
 vendor/
-web/scripts/index.js
+web/scripts/main.js
 web/scripts/*.map
 web/scripts/playerCodeEditor.js
 

@@ -24,16 +24,16 @@ class window.EditorManager
             Builds the HTML for, and sets up the functionality of,
             the player code editor.
         ###
-        editorDiv = jQuery "##{@editorDivId}"
+        editorDiv = $ "##{@editorDivId}"
         editorDiv.append '<div id="ace-editor"></div>'
 
         @acelne = document.createElement("div")
         $(@acelne).append '<div id="parameter-pop-up" class="pop-up-container"></div>'
 
         if @editorConfig.buttons.length != 0
-            buttonField = jQuery '<div>', {id: 'buttons'}
+            buttonField = $ '<div>', {id: 'buttons'}
             if $.inArray('insertButtons', @editorConfig.buttons) != -1
-                buttonField.append jQuery('<div>', {
+                buttonField.append $('<div>', {
                     id: 'insertButtons'}).get(0)
             editorDiv.append buttonField.get 0
 
@@ -89,7 +89,7 @@ class window.EditorManager
         if $.inArray('insertButtons', @editorConfig.buttons) == -1
             return
 
-        buttonField = jQuery('#insertButtons')
+        buttonField = $('#insertButtons')
         buttons = []
         if @commands.shorthand?
             for line in @commands.shorthand
@@ -118,7 +118,7 @@ class window.EditorManager
                 line = @editor.createBlankFunctionHeader(command) + ';'
                 funct = codeEditor.insertCommand
 
-            button = jQuery '<button>', {
+            button = $ '<button>', {
                 id: command,
                 value: command,
                 text: "#{line}",
@@ -137,13 +137,13 @@ class window.EditorManager
     addEventListeners: ->
         ed = @editor
         if $.inArray('switchUp', @editorConfig.buttons) != -1
-            jQuery('.ace_uparrow').click ed.button ed.usesCurrentPosition ed.switchUp
+            $('.ace_uparrow').click ed.button ed.usesCurrentPosition ed.switchUp
 
         if $.inArray('switchDown', @editorConfig.buttons) != -1
-            jQuery('.ace_downarrow').click ed.button ed.usesCurrentPosition ed.switchDown
+            $('.ace_downarrow').click ed.button ed.usesCurrentPosition ed.switchDown
 
         if $.inArray('deleteLine', @editorConfig.buttons) != -1
-            jQuery('.ace_xbutton').click ed.button ed.usesTextDocument ed.usesCurrentRow ed.deleteLine
+            $('.ace_xbutton').click ed.button ed.usesTextDocument ed.usesCurrentRow ed.deleteLine
 
         ed.onChangeListener @onStudentCodeChange
         ed.onClickListener @onEditorClick
@@ -165,11 +165,11 @@ class window.EditorManager
 
         # Touch Handlers
         @ongoingTouches = []
-        jQuery('.ace_scroller').bind "touchstart", @handleTouchStart
-        jQuery('.ace_scroller').bind "touchend", @handleTouchEnd
-        jQuery('.ace_scroller').bind "touchcancel", @handleTouchCancel
-        jQuery('.ace_scroller').bind "touchleave", @handleTouchEnd
-        jQuery('.ace_scroller').bind "touchmove", @handleTouchMove
+        $('.ace_scroller').bind "touchstart", @handleTouchStart
+        $('.ace_scroller').bind "touchend", @handleTouchEnd
+        $('.ace_scroller').bind "touchcancel", @handleTouchCancel
+        $('.ace_scroller').bind "touchleave", @handleTouchEnd
+        $('.ace_scroller').bind "touchmove", @handleTouchMove
         return
 
     resetEditor: =>
@@ -208,7 +208,7 @@ class window.EditorManager
             Updates the number of commands remaining for each command.
         ###
         valid = true
-        buttonField = jQuery '#insertButtons'
+        buttonField = $ '#insertButtons'
         for command of @commands
             button = buttonField.find "##{jQuerySelectorEscapedString command}"
             if @commands[command].rawText?
@@ -255,7 +255,7 @@ class window.EditorManager
             $(".ace_downarrow").css({"display":"block"})
 
         $(@acelne).css(
-            {"width":"15px";"max-height":aglh*2.6,
+            {"width":"15px","max-height":aglh*2.6,
             "z-index": 20,"position":"relative",
             "top":aalt-aglh*1.5+"px",
             "left":0+"px","display": "block"})
@@ -264,7 +264,7 @@ class window.EditorManager
 
     onEditorCursorMove: (cursorEvent) =>
         if @parameterPopUp == undefined
-            @parameterPopUp = jQuery('#parameter-pop-up')
+            @parameterPopUp = $('#parameter-pop-up')
 
         setTimeout @moveEditorButtons, @moveEditorButtonDelay
 
@@ -281,7 +281,7 @@ class window.EditorManager
         ###
         row = clickEvent.$pos.row
         if @parameterPopUp == undefined
-            @parameterPopUp = jQuery('#parameter-pop-up')
+            @parameterPopUp = $('#parameter-pop-up')
 
         if inBounds
             line = clickEvent.editor.getSession().getLine row
@@ -311,21 +311,21 @@ class window.EditorManager
                 @parameterPopUp.append "<input id='#{id}' type='text' size='5' class='pop-up-inside'>"
                 codeParam = commandInfo.parameters[i - 1]
                 if codeParam != "__"
-                    jQuery("##{id}").val codeParam
+                    $("##{id}").val codeParam
                 if i != numberOfInputs
                     @parameterPopUp.append ','
-                    jQuery("##{id}").keypress(
+                    $("##{id}").keypress(
                         (e) ->
                             if e.which == 13
                                 setTimeout (->
-                                    jQuery(e.currentTarget).next().focus()
+                                    $(e.currentTarget).next().focus()
                                     return), 0
                                 return false
                             return true
                         )
                 else
                     manager = @
-                    jQuery("##{id}").keypress(
+                    $("##{id}").keypress(
                         (e) ->
                             if e.which == 13
                                 setTimeout (->
@@ -336,7 +336,7 @@ class window.EditorManager
                         )
 
             @parameterPopUp.append ')'
-            button = jQuery '<button>', {
+            button = $ '<button>', {
                 id: 'editLine',
                 text: 'Ok',
                 class: 'pop-up-inside',
@@ -344,7 +344,7 @@ class window.EditorManager
             }
             @parameterPopUp.append button.get 0
 
-            editorOffset = jQuery('#ace-editor').position()
+            editorOffset = $('#ace-editor').position()
             gutterOffset = @editor.editor.renderer.$gutterLayer.gutterWidth + \
                 @editor.editor.renderer.$gutterLayer.$padding?.left
             @parameterPopUp.css 'top', "12px"
@@ -356,7 +356,7 @@ class window.EditorManager
                 return
 
             @parameterPopUp.show()
-            setTimeout (-> jQuery("##{command}-parameter-#{1}").focus(); return), 0
+            setTimeout (-> $("##{command}-parameter-#{1}").focus(); return), 0
             clickEvent.stopPropagation()
             return false
         else
@@ -365,11 +365,11 @@ class window.EditorManager
 
     popUpEditLine: (row, command) ->
         if @parameterPopUp == undefined
-            @parameterPopUp = jQuery('#parameter-pop-up')
+            @parameterPopUp = $('#parameter-pop-up')
 
         line = "#{command}("
         for i in [1..@commands[command]['inputs']] by 1
-            line += jQuery("#parameter-pop-up ##{command}-parameter-#{i}").val()
+            line += $("#parameter-pop-up ##{command}-parameter-#{i}").val()
             if i != @commands[command]['inputs']
                 line += ', '
         line += ');'
@@ -443,7 +443,7 @@ class window.PlayerCodeEditor
         @editSession.setUseSoftTabs true
         @editor.setReadOnly !@freeEdit
         if !@freeEdit
-            jQuery("##{@editorDivId} textarea").attr "readonly", "readonly"
+            $("##{@editorDivId} textarea").attr "readonly", "readonly"
 
         @codePrefixLength = 0
         @codeSuffixLength = 0
@@ -738,7 +738,7 @@ class window.PlayerCodeEditor
             argumentFound = false
             for argument of originalArguments
                 if @detectNamedArgument originalArguments[argument]
-                    jQuery.extend true, originalArguments[argument],
+                    $.extend true, originalArguments[argument],
                         argumentDictionary
                     argumentFound = true
                     break

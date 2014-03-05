@@ -8,8 +8,6 @@ class window.gameSelector
 
         dData=null
 
-        $.get 'scripts/config/gameSelection.json',(data)->
-          #console.log(JSON.stringify(data))
         $.ajax
           url: 'scripts/config/gameSelection.json',
           dataType: 'json',
@@ -19,31 +17,13 @@ class window.gameSelector
 
         cssData=dData
         $(tmp).css(cssData["tmpCSS"])
-        $(tmp).attr("id","gameSelection")
+        $(tmp).attr(cssData["tmpAttr"])
         @div.append(tmp)
         return
 
     buildDiv: (count, game, desc, player, canPlay, codeland, questContext) -> #Coded by Lavanya
-        span = document.createElement("span")
-
-        console.log(JSON.stringify(cssData))
-
-
+        span = $('<span></span>')
         $(span).css(cssData["spanCSS"])
-
-        '''
-        $(span).css {
-            "min-width":"450px",
-            "min-height":"32px",
-            "padding" : "5px",
-            "display": "inline-block",
-            "white-space": "nowrap",
-            "border":"1px dashed blue",
-            "background-color": "#003366", #FFFFEE
-            "font-family":"Monospace",
-            "margin:5px",
-            "cursor": "pointer"
-        }'''
 
         $(span).attr("id","select#{game}")
         $(span).attr("class","select#{count}")
@@ -53,7 +33,7 @@ class window.gameSelector
         if player?.passed is true
             $(span).append """<b><font color="white">#{count}: #{desc.title}</font></b> """ #Coded by Lavanya
             src = 'img/star.png'
-            img = jQuery '<img>', {
+            img = $ '<img>', {
                 id: 'star',
                 src: src,
                 style: 'max-height:16px',
@@ -64,9 +44,9 @@ class window.gameSelector
             $(span).append """<font color="white">#{count}: #{desc.title}</font>""" #Coded by Lavanya
 
     buildAn: (con,canPlay) ->
-        tmp2 = document.createElement("img")
+        tmp2 = $('<img></img>')
         $(con).append(tmp2)
-        $(tmp2).css({width:'25%',height:'80%',position:'absolute',left:'5%',top:'10%',margin:0,padding:0})
+        $(tmp2).css(cssData["tmp2CSS"])
         derp = () ->
             if $(tmp2).attr("src") is "img/wmn1_fr1.gif"
                 $(tmp2).attr("src","img/wmn1_fr2.gif")
@@ -80,8 +60,7 @@ class window.gameSelector
     buildScore: (con,player) ->
         tmp = document.createElement("div")
         $(con).append(tmp)
-        $(tmp).css({width:'25%',height:'80%',position:'absolute',left:'35%',top:'10%',margin:0,padding:0})
-
+        $(tmp).css(cssData["tmpBuildInfoCSS"])
         tmp1 = document.createElement("p")
         tmp2 = document.createElement("p")
         tmp3 = document.createElement("div")
@@ -109,7 +88,7 @@ class window.gameSelector
     buildInfo: (con,desc) ->
         tmp = document.createElement("div")
         $(con).append(tmp)
-        $(tmp).css({width:'30%',height:'80%',position:'absolute',left:'65%',top:'10%',margin:0,padding:0})
+        $(tmp).css(cssData["tmpBuildInfoCSS"])
 
         tmp1 = document.createElement("p")
         tmp2 = document.createElement("p")
@@ -127,4 +106,4 @@ class window.gameSelector
         else
             ovr = document.createElement("div")
             $(con).prepend(ovr)
-            $(ovr).css({'opacity':'.5','width':'100%',"min-height":"250px",'height':'100%',position:'inherit','z-index':'1','background-color':'#000000'})
+            $(ovr).css(cssData["overCSS"])

@@ -41,17 +41,17 @@ class window.EditorManager
 
         # New logic for up, down, and delete "buttons"
         if $.inArray('switchUp', @editorConfig.buttons) != -1
-            @switchUpImg = 'img/ua-usable.png'
+            @switchUpImg = 'img/interface/ua-usable.png'
         else
-            @switchUpImg = 'img/ua.png'
+            @switchUpImg = 'img/interface/ua.png'
         if $.inArray('switchDown', @editorConfig.buttons) != -1
-            @switchDownImg = 'img/da-usable.png'
+            @switchDownImg = 'img/codeIn/da-usable.png'
         else
-            @switchDownImg = 'img/da.png'
+            @switchDownImg = 'img/codeIn/da.png'
         if $.inArray('deleteLine', @editorConfig.buttons) != -1
-            @deleteImg = 'img/cx-usable.png'
+            @deleteImg = 'img/codeIn/cx-usable.png'
         else
-            @deleteImg = 'img/cx.png'
+            @deleteImg = 'img/codeIn/cx.png'
 
         @interpreter = new CodeInterpreter @commands
         @editor = new PlayerCodeEditor 'ace-editor', \

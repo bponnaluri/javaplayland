@@ -12,7 +12,7 @@ window.objCloud = (dim,par,obj,x,y,tscale,ng,man) ->
       dataType: 'json',
       async: false,
       success: (data)->
-      cssData=data
+        cssData=data
 
     tipnum = 0
     resizeCloud = () ->

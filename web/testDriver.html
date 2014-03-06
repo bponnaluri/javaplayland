@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>QUnit basic example</title>
+<link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.12.0.css">
+</head>
+<body>
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+
+		<script src="scripts/gui/referenceUI.js"></script>
+		<script src="codeland.js" ></script>
+		<script src="scripts/ace/src/ace.js" ></script>
+		<script src="scripts/ace/src/mode-java.js" ></script>
+		<script src="codeInterpreter.js" ></script>
+        <script src="scripts/gui/referenceUI.js"></script>
+        <script src="codeland.js" ></script>
+        <script src="scripts/model/codelandStorage.js"></script>
+        <script src="scripts/ace/src/ace.js" ></script>
+        <script src="scripts/ace/src/mode-java.js" ></script>
+        <script src="codeInterpreter.js" ></script>
+        <script src="scripts/gui/playerCodeEditor.js" ></script>
+        <script src="scripts/gui/gameSelection.js" ></script>
+        <script src="scripts/gui/gameVisual.js" ></script>
+        <script src="gridGameState.js" ></script>
+        <script src="scripts/gui/paintGameState.js" ></script>
+        <script src="scripts/gui/gameManager.js" ></script>
+        <script src="scripts/gui/cloud.js" ></script>
+        <script src="scripts/gui/menuBar.js" ></script>
+        <script src="scripts/gui/ref.js" ></script>
+		<script src="http://code.jquery.com/qunit/qunit-1.12.0.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+
+		
+	<script>
+
+
+		function loadHelper(location,st){
+
+			
+
+
+			var baseDir="http://localhost/javaplayland/web/"
+			$.ajax({
+			dataType:"text",
+			url: baseDir+location,
+			context: document.body
+			}).done(function() {
+			
+
+					if(QUnit.config.semaphore!=0){
+						start();
+					}
+			
+			});
+		}
+
+/*
+		asyncTest( "Test loading", function() {
+		
+			loadHelper("doppio-jvm/scripts/demo/util.js");
+			loadHelper("doppio-jvm/scripts/demo/_.js");
+			loadHelper("doppio-jvm/scripts/jvm/gLong.js");
+			loadHelper("doppio-jvm/scripts/jvm/browserfs.js");
+
+			loadHelper("doppio-jvm/scripts/demo/untar.js");
+			loadHelper("scripts/nodeSetup.js");
+			loadHelper("doppio-jvm/scripts/jvm/compressed.js");
+			loadHelper("doppio-jvm/scripts/demo/doppio-api.js");
+
+			loadHelper("scripts/referenceUI.js");
+			loadHelper("scripts/codeland.js");
+			loadHelper("scripts/ace/src/ace.js");
+			loadHelper("scripts/ace/src/mode-java.js");
+			loadHelper("scripts/codeInterpreter.js");
+			loadHelper("scripts/playerCodeEditor.js");
+			loadHelper("scripts/gameSelection.js");
+			loadHelper("scripts/gameVisual.js");
+			loadHelper("scripts/gridGameState.js");
+			loadHelper("scripts/paintGameState.js");
+			loadHelper("scripts/gameManager.js");
+			loadHelper("scripts/cloud.js");
+			loadHelper("scripts/menuBar.js");
+			loadHelper("scripts/ref.js");
+			ok(1,"All files have loaded")
+
+
+		});
+*/
+
+
+
+/*
+Professor Angrave: Create simple tests for all the classes.
+
+*/
+		asyncTest("Test referenceUI",function(){
+
+			start()
+	
+	
+			var sandboxPanel=window.sandBoxPage(15)
+
+			//Check if divs exist
+			ok(sandboxPanel.getInput()!=null)
+			ok(sandboxPanel.getOutput()!=null)
+			ok(sandboxPanel.getBackFade()!=null)
+			ok(sandboxPanel.getRefContainer()!=null)
+
+			ok(1,"Java sandbox was correctly set up.")
+
+			var refPanel=window.referencePage(15)
+			
+			ok(refPanel.getBackFade()!=null)
+			ok(refPanel.getBackFade().attr("id")==="bF")
+			ok(refPanel.getRefContainer()!=null)
+			ok(1,"Reference panel was correctly set up")
+
+
+			//Testing cloud.cofee
+			window.playAudio("hello")
+			ok(1,"Finished tests for cloud.coffee")
+
+			//Testing codeInterpreter.coffee
+			var inter=new CodeInterpreter(null)
+			inter.buildNeededParsers
+			inter.identifyCommand(1)
+			inter.scanCommand(1)
+			inter.scanText("asfasdfasdfasdf")
+			ok(1,"Finished tests for codeInterpreter")
+
+
+			ok(0,"Finished tests for codeland.coffee")
+			ok(0,"Finished tests for gameManager.coffee")
+			ok(0,"Finished tests for gameSelection.coffee")
+			ok(0,"Finished tests for gameVisual.coffee")
+			ok(0,"Finished tests for gridGameState.coffee")
+			ok(0,"Finished tests for paintGameState.coffee")
+			ok(0,"Finished tests for playerCodeEditor.coffee")
+
+
+
+	
+
+
+		});
+	</script>
+</body>
+</html>

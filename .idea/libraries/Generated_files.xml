@@ -2,18 +2,25 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/web/scripts/gui/referenceUI.js" />
-        <item url="file://$PROJECT_DIR$/web/scripts/model/codelandStorage.js" />
-        <item url="file://$PROJECT_DIR$/web/scripts/gui/codeland.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/gui/gameManager.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/gui/playerCodeEditor.js" />
         <item url="file://$PROJECT_DIR$/web/scripts/gui/paintGameState.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/gui/codeland.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/model/codelandStorage.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/gui/gameSelection.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/gui/referenceUI.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/web/scripts/gui/referenceUI.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/model/codelandStorage.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/gui/gameManager.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/gui/playerCodeEditor.js" />
       <root url="file://$PROJECT_DIR$/web/scripts/model/codelandStorage.js" />
       <root url="file://$PROJECT_DIR$/web/scripts/gui/codeland.js" />
-      <root url="file://$PROJECT_DIR$/web/scripts/model/gridGameState.js" />
       <root url="file://$PROJECT_DIR$/web/scripts/gui/paintGameState.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/model/gridGameState.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/gui/gameSelection.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/gui/referenceUI.js" />
     </CLASSES>
     <SOURCES />
   </library>

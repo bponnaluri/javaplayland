@@ -11,6 +11,7 @@ class window.gameSelector
 
   buildDiv: (count, game, desc, player, canPlay, codeland) ->
 
+
     cssData=null
     $.ajax
       url: 'scripts/config/cloud.json',
@@ -18,8 +19,11 @@ class window.gameSelector
       async: false,
       success: (data)->
         cssData=data
-    span = document.createElement("span") #Setting CSS breaks the code here!!!
-    #$(span).css(cssData["spanCSS"])
+
+    span = document.createElement("span")
+    $(span).css({"min-width":"450px","min-height":"32px", "padding" : "5px","display": "inline-block","white-space": "nowrap", "border":"1px dashed blue","font-family":"Monospace","background-color":"#003366","cursor": "pointer"})
+
+
     #display and whitespace to try to avoid wrapping (may not work in IE)
     #            if cont.width() < 1600
     #                lp = (cont.width() - 800)/2

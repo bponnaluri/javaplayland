@@ -48,9 +48,9 @@ class window.gameSelector
 #            @canPlay(tmp1,canPlay, codeland, game)
 
   buildAn: (con,canPlay) ->
-    tmp2 = document.createElement("img")
+    tmp2 = $('<img></img>')
     $(con).append(tmp2)
-    $(tmp2).css({width:'25%',height:'80%',position:'absolute',left:'5%',top:'10%',margin:0,padding:0})
+    $(tmp2).css(config["tmp2CSS"])
     derp = () ->
       if $(tmp2).attr("src") is "img/wmn1_fr1.gif"
         $(tmp2).attr("src","img/wmn1_fr2.gif")
@@ -62,13 +62,13 @@ class window.gameSelector
       $(tmp2).attr("src","img/wmn1_fr1.gif")
 
   buildScore: (con,player) ->
-    tmp = document.createElement("div")
+    tmp = $('<div></div>')
     $(con).append(tmp)
-    $(tmp).css({width:'25%',height:'80%',position:'absolute',left:'35%',top:'10%',margin:0,padding:0})
+    $(tmp).css(config["tmpBuildScoreCSS"])
 
-    tmp1 = document.createElement("p")
-    tmp2 = document.createElement("p")
-    tmp3 = document.createElement("div")
+    tmp1 = $('<p></p>')
+    tmp2 = $('<p></p>')
+    tmp3 = $('<p></p>')
 
     $(tmp).append(tmp1)
     $(tmp).append(tmp2)
@@ -91,12 +91,12 @@ class window.gameSelector
     return
 
   buildInfo: (con,desc) ->
-    tmp = document.createElement("div")
+    tmp = $('<div></div>')
     $(con).append(tmp)
-    $(tmp).css({width:'30%',height:'80%',position:'absolute',left:'65%',top:'10%',margin:0,padding:0})
+    $(tmp).css(cssData["tmpBuildInfoCSS"])
 
-    tmp1 = document.createElement("p")
-    tmp2 = document.createElement("p")
+    tmp1 = $('<p></p>')
+    tmp2 = $('<p></p>')
 
     $(tmp).append(tmp1)
     $(tmp).append(tmp2)
@@ -109,6 +109,6 @@ class window.gameSelector
     if cp
       $(con).click( -> codeland.startGame(game) )
     else
-      ovr = document.createElement("div")
+      ovr = $('<div></div>')
       $(con).prepend(ovr)
-      $(ovr).css({'opacity':'.5','width':'100%',"min-height":"250px",'height':'100%',position:'inherit','z-index':'1','background-color':'#000000'})
+      $(ovr).css(cssData["tmpOverCSS"])

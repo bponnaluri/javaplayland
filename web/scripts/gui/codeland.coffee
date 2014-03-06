@@ -6,7 +6,7 @@ window.notifyEvalSourcePosition = (startLine,startCol,endLine,endCol) ->
       Shows the user the currently executing line.
       --> Where is this function called?
   ###
-  console.log startLine,startCol,endLine,endCol
+  console.log "Start line:"+startLine,startCol,endLine,endCol
   ##window.gameManager.codeEditor.editorGoToLine startLine
   return;
 
@@ -135,7 +135,7 @@ root.drawGameMap = (player) ->
 
   gameSequence = root.getGameSequence()
   sel = new gameSelector(mapDiv, false)
-  tmp1 = document.getElementById("gameSelection")
+  tmp1 = $("gameSelection")
 
   count = 0
   addGameToMap = (game) ->
@@ -178,7 +178,7 @@ root.startGame = (game) ->
   root.currentGame = null
 
   gamediv = $(root.UIcont)
-  tmp1 = document.getElementById("gameSelection")
+  tmp1 = $("gameSelection")
   if tmp1 != null
     root.gameSelectionScrollPosition = tmp1.scrollTop
     root.UIcont.removeChild(tmp1)

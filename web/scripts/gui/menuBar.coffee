@@ -3,7 +3,7 @@ window.appendBar = (d) ->
   $("#acelne").remove()
   cssData=null
   $.ajax
-    url: 'scripts/config/bbar.json',
+    url: 'scripts/config/menuBar.json',
     dataType: 'json',
     async: false,
     success: (data)->

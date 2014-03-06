@@ -12,6 +12,7 @@ if not deepcopy?
     deepcopy = (src) -> $.extend(true, {}, src)
 
 class window.GameManager
+    cssCfg=null
     constructor: (@environment) ->
         ###
             External Function (used by something outside of this file)
@@ -22,6 +23,17 @@ class window.GameManager
             @param environment
                 The environment and configuration required for this game.
         ###
+
+        cssData=null
+        $.ajax
+          url: 'scripts/config/gameManager.json',
+          dataType: 'json',
+          async: false,
+          success: (data)->
+            cssData=data
+            console.log("Loaded data:"+data)
+        console.log(cssData)
+        @cssCfg=cssData
         @config = deepcopy @environment.description
         @gameStateBase = @environment.gameState
 
@@ -46,33 +58,26 @@ class window.GameManager
             Sets up everything for the game to run.
             That is, the code editor, the game visual and the event listeners.
         ###
-        @gameDiv = jQuery @environment.gamediv
+        @gameDiv = $ @environment.gamediv
         @gameDiv.empty()
-        editdiv = document.createElement("div")
-        vis = document.createElement("div")
-        butdiv = document.createElement("div")
+        editdiv = $('<div></div>')
+        vis = $('<div></div>')
+        butdiv=$('<div></div>')
 
         $(editdiv).attr({'id':@editorDiv,'class':'code_editor'})
-        $(editdiv).css({
-            width:'60%',height:'80%','position':'absolute',
-            'top':'10%','left':'3.3%',"background-color":"#003366", ###366CA3###
-            "border":"4px double #3F80C0"})
+        $(editdiv).css(@cssCfg["editDivCSS"])
 
         @gameDiv.append(editdiv)
 
         $(vis).attr({'id':@visualDiv})
-        $(vis).css({
-            width:'30%',height:'80%','position':'absolute',
-            'top':'10%','right':'3.3%',"background-color":"#003366",
-            "border":"4px double #3F80C0"})
+        $(vis).css(@cssCfg["visCSS"])
         @gameDiv.append(vis)
 
 
-        $(editdiv).append '<img height="48" style="position:absolute;bottom:1%;right:1%" alt="Play" id="compileAndRun" src="img/freeware/button_play_green-48px.png" title="Run Code"/>'
-        $(editdiv).append '<img height="48" style="position:absolute;bottom:1%;right:1%" alt="Stop" id="stopRun" src="img/freeware/button_stop_red-48px.png" title="Stop Code"/>'
-        $(editdiv).append '<img height="48" style="position:absolute;bottom:1%;right:8%" alt="Reset" title="Restart level (reset code back to original)" id="resetState" src="img/cc-bynd/undo_yellow-48px.png"/>'
-        $(editdiv).append '<img height="48" style="position:absolute;bottom:1%;right:15%" alt="Help/Tips" title="Help/Tips" id="help" src="img/freeware/info-48px.png"/>'
-        jQuery('#stopRun').hide()
+        eDiv=@cssCfg["editDiv"]
+        for i in [0..3]
+          $(editdiv).append(eDiv[i])
+        $('#stopRun').hide()
 
 
         @codeEditor = new EditorManager @editorDiv, @config.editor, @config.code
@@ -297,10 +302,10 @@ class window.GameManager
 
             Sets up the event listeners the game manager responds to.
         ###
-        jQuery('#compileAndRun').click @runStudentCode
-        jQuery('#stopRun').click @resetGame
-        jQuery('#resetState').click @reset
-        jQuery('#help').click @helpTips
+        $('#compileAndRun').click @runStudentCode
+        $('#stopRun').click @resetGame
+        $('#resetState').click @reset
+        $('#help').click @helpTips
         @codeEditor.onStudentCodeChangeListener @resetGame.bind @
         @codeEditor.onCommandValidation @commandsValid
         return
@@ -317,10 +322,10 @@ class window.GameManager
                 Whether or not the code in the code editor is valid.
         ###
         if valid
-            jQuery('#compileAndRun').attr 'disabled', false
+            $('#compileAndRun').attr 'disabled', false
             @canRun = true
         else
-            jQuery('#compileAndRun').attr 'disabled', true
+            $('#compileAndRun').attr 'disabled', true
             @canRun = false
         return
 
@@ -367,8 +372,8 @@ class window.GameManager
             return
         @running = true
         code = @codeEditor.getStudentCode()
-        jQuery('#compileAndRun').hide()
-        jQuery('#stopRun').show()
+        $('#compileAndRun').hide()
+        $('#stopRun').show()
 
         @environment.stats.runCount += 1
         @storeStats()
@@ -420,8 +425,8 @@ class window.GameManager
 
             Shows the run button.
         ###
-        jQuery('#stopRun').hide()
-        jQuery('#compileAndRun').show()
+        $('#stopRun').hide()
+        $('#compileAndRun').show()
         @running = false
         return
 

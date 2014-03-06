@@ -1,57 +1,45 @@
 window.appendBar = (d) ->
 
-    config=null
-    $.ajax
-      url: 'scripts/config/gameSelection.json',
-      dataType: 'json',
-      async: false,
-      success: (data)->
-        config=data
-
-    toggleDrawerInOut = () ->
-        cfg=config["drawerToggle"]
-        if $(edge).attr("src") == cfg["inImg"]
-            $(cont).animate(cfg["inAnim"])
-            $(edge).attr({"src":cfg["outImg"]})
-        else
-            $(cont).animate(cfg["outAnim"])
-            $(edge).attr({"src":cfg["inImg"]})
-        return false
+  toggleDrawerInOut = () ->
+    if $(edge).attr("src") == "img/barin.png"
+      $(cont).animate({"left":"0px"})
+      $(cont).animate({"left":"-10px"})
+      $(edge).attr({"src":"img/barout.png"})
+    else
+      $(cont).animate({"left":"0px"})
+      $(cont).animate({"left":"-150px"})
+      $(edge).attr({"src":"img/barin.png"})
+    return false
 
 
-    cont = $('<div></div>')
-    edge=$('<img></img>')
+  cont = document.createElement("div")
+  edge = document.createElement("img")
 
-    ref =$('<img></img>')
-    select=$('<img></img>')
+  ref = document.createElement("img")
+  select = document.createElement("img")
+  sand = document.createElement("img")
 
-    select =$('<img></img>')
-    sand=$('<img></img>')
+  $(cont).css({"width":"150px","height":'50px','position':'absolute','top':'0%','left':'-100px',"z-index":"280","background-color":"#003366","border-top":"1px solid black","border-bottom":"1px solid black"})
+  $(edge).attr({"width":"30px","src":"img/barin.png"})
+  $(edge).css({'position':'absolute','top':'-0px','right':'-30px','height':'50px'})
 
+  $(ref).attr({"height":"80%","width":"30%","alt":"Java book","src":"img/cc0/Spiral_bound_book-128px.png","title":"Java book"})
+  $(ref).css({"position":"absolute","top":"6.6%","right":"5%"})
+  $(sand).attr({"height":"80%","width":"30%","alt":"Code Sandbox","src":"img/cc-bynd/keyboard.png","title":"Code sandbox"})
+  $(sand).css({"position":"absolute","top":"6.6%","right":"35%"})
+  $(select).attr({"height":"80%","width":"30%","alt":"Select level","src":"img/cc0/treasuremap-128px.png","title":"Select level"})
+  $(select).css({"position":"absolute","bottom":"6.6%","right":"65%"})
 
-    $(cont).append(ref)
-    $(cont).append(select)
-    $(cont).append(sand)
-    $(cont).append(edge)
+  $(cont).append(ref)
+  $(cont).append(select)
+  $(cont).append(sand)
+  $(cont).append(edge)
 
+  $(ref).click referencePage
+  $(select).click codeland.showMap
+  $(sand).click sandBoxPage
 
-    rPage = ()->referencePage(config["pSize"])
-    $(ref).click rPage
-    $(select).click codeland.showMap
+  #$(cont).children().click(toggleDrawerInOut)
+  $(toggleDrawerInOut)
 
-    sPage = ()->sandBoxPage(config["pSize"])
-    $(sand).click sPage
-    
-
-    (toggleDrawerInOut)
-    $(d).append(cont)
-
-    $(cont).css(config["cont"])
-    $(edge).attr(config["edgeAttr"])
-    $(edge).css(config["edgeCss"])
-    $(ref).attr(config["refAttr"])
-    $(ref).css(config["refCSS"])
-    $(sand).css(config["sandCSS"])
-    $(select).attr(config["selectAttr"])
-    $(select).css(config["selectCSS"])
-
+  $(d).append(cont)

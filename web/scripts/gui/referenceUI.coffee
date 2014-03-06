@@ -18,7 +18,7 @@ class sandBoxInfo
         dData=null
         console.log("Starting")
         $.ajax
-          url: 'config/referenceUI.json',
+          url: 'scripts/config/referenceUI.json',
           dataType: 'json',
           async: false,
           success: (data)->

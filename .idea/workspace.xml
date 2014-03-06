@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3e3efbbe-2425-400c-960a-3c21e7efab6c" name="Default" comment="" />
+    <list default="true" id="3e3efbbe-2425-400c-960a-3c21e7efab6c" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/img/interface/barout.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/gui/cloud.coffee" afterPath="$PROJECT_DIR$/web/scripts/gui/cloud.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/doppio-jvm/scripts/demo/doppio-api.coffee" afterPath="$PROJECT_DIR$/web/doppio-jvm/scripts/demo/doppio-api.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/gui/gameManager.coffee" afterPath="$PROJECT_DIR$/web/scripts/gui/gameManager.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/gui/gameSelection.coffee" afterPath="$PROJECT_DIR$/web/scripts/gui/gameSelection.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/gui/gameVisual.coffee" afterPath="$PROJECT_DIR$/web/scripts/gui/gameVisual.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/config/gridDefaults.json" afterPath="$PROJECT_DIR$/web/config/gridDefaults.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/gui/menuBar.coffee" afterPath="$PROJECT_DIR$/web/scripts/gui/menuBar.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/config/paintDefaults.json" afterPath="$PROJECT_DIR$/web/config/paintDefaults.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/gui/playerCodeEditor.coffee" afterPath="$PROJECT_DIR$/web/scripts/gui/playerCodeEditor.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/gui/referenceUI.coffee" afterPath="$PROJECT_DIR$/web/scripts/gui/referenceUI.coffee" />
+    </list>
     <ignored path="javaplayland.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +39,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="29" selection-start="2467" selection-end="2467" vertical-scroll-proportion="0.0" vertical-offset="246" max-vertical-offset="1185">
+            <state line="47" column="29" selection-start="2416" selection-end="2416" vertical-scroll-proportion="0.0" vertical-offset="705" max-vertical-offset="1455">
               <folding />
             </state>
           </provider>
@@ -35,10 +48,8 @@
       <file leaf-file-name="codeland.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/scripts/gui/codeland.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="590" column="20" selection-start="17027" selection-end="17027" vertical-scroll-proportion="0.264574" vertical-offset="8614" max-vertical-offset="9870">
-              <folding>
-                <marker date="1394073137144" expanded="false" signature="4467:4481" placeholder="..." />
-              </folding>
+            <state line="590" column="20" selection-start="17027" selection-end="17027" vertical-scroll-proportion="0.26516855" vertical-offset="8614" max-vertical-offset="9870">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -46,7 +57,7 @@
       <file leaf-file-name="gameManager.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/scripts/gui/gameManager.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="455" column="0" selection-start="14005" selection-end="14005" vertical-scroll-proportion="0.0" vertical-offset="5952" max-vertical-offset="6915">
+            <state line="455" column="0" selection-start="15683" selection-end="15683" vertical-scroll-proportion="0.0" vertical-offset="5952" max-vertical-offset="6915">
               <folding />
             </state>
           </provider>
@@ -265,14 +276,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -283,15 +286,23 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -610,24 +621,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/gui/gameManager.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="455" column="0" selection-start="14005" selection-end="14005" vertical-scroll-proportion="0.0" vertical-offset="5952" max-vertical-offset="6915">
+        <state line="455" column="0" selection-start="15683" selection-end="15683" vertical-scroll-proportion="0.0" vertical-offset="5952" max-vertical-offset="6915">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="29" selection-start="2467" selection-end="2467" vertical-scroll-proportion="0.0" vertical-offset="246" max-vertical-offset="1185">
+        <state line="47" column="29" selection-start="2416" selection-end="2416" vertical-scroll-proportion="0.0" vertical-offset="705" max-vertical-offset="1455">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/gui/codeland.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="590" column="20" selection-start="17027" selection-end="17027" vertical-scroll-proportion="0.264574" vertical-offset="8614" max-vertical-offset="9870">
-          <folding>
-            <marker date="1394073137144" expanded="false" signature="4467:4481" placeholder="..." />
-          </folding>
+        <state line="590" column="20" selection-start="17027" selection-end="17027" vertical-scroll-proportion="0.26516855" vertical-offset="8614" max-vertical-offset="9870">
+          <folding />
         </state>
       </provider>
     </entry>

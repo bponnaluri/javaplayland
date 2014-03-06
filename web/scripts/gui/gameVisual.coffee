@@ -57,9 +57,9 @@ class window.GameVisual
     ###
     initResources: (config) ->
         univImg[0] = new Image()
-        univImg[0].src = "img/fallen.png"
+        univImg[0].src = "img/interface/fallen.png"
         univImg[1] = new Image()
-        univImg[1].src = "img/shadow.png"
+        univImg[1].src = "img/interface/shadow.png"
         tmp = []
         index = 0
         for key,imgar of config

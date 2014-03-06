@@ -16,8 +16,8 @@
         "display": "inline-block",
         "white-space": "nowrap",
         "border":"1px dashed blue",
-        "background-color": "#003366",
         "font-family":"Monospace",
+        "background-color":"#003366",
         "cursor": "pointer"
     },
     "tmp2CSS":{

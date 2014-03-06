@@ -62,8 +62,8 @@ class sandBoxInfo
     setupEnlarge: () ->
         en1=$('<img></img>')
         en2=$('<img></img>')
-        $(en1).attr({'src':'img/enlarge1.png',class:'en'})
-        $(en2).attr({'src':'img/enlarge1.png',class:'en'})
+        $(en1).attr({'src':'img/interface/enlarge1.png',class:'en'})
+        $(en2).attr({'src':'img/interface/enlarge1.png',class:'en'})
         $(en1).css(cssData["en1CSS"])
         $(en2).css(cssData["en2CSS"])
         $(input).append(en1)
@@ -96,9 +96,9 @@ window.sandBoxPage = (pageSize) ->
     sPanel.setupEnlarge()
 
     enOutHover = () ->
-        this.src = 'img/enlarge2.png'
+        this.src = 'img/interface/enlarge2.png'
     enInHover = () ->
-        this.src = 'img/enlarge1.png'
+        this.src = 'img/interface/enlarge1.png'
     enClick = () ->  #This function is called when you want to enlarge the sandbox output
         console.log("Making larger")
         $(this).unbind()
@@ -106,7 +106,7 @@ window.sandBoxPage = (pageSize) ->
         $(this).parent().stop()
         $(this).parent().siblings().stop()
 
-        this.src = 'img/shrink1.png'
+        this.src = 'img/interface/shrink1.png'
         $(this).parent().animate({width:'90%',height:'90%'})
         $(this).parent().siblings().animate({width:'0%',height:'0%',opacity:'0'})
 
@@ -129,9 +129,9 @@ window.sandBoxPage = (pageSize) ->
         $(".en").hover(enOutHover,enInHover)
         $(".en").click(enClick)
     clHover = () ->
-        this.src = 'img/shrink2.png'
+        this.src = 'img/interface/shrink2.png'
     cllvHover = () ->
-        this.src = 'img/shrink1.png'
+        this.src = 'img/interface/shrink1.png'
 
     $(".en").hover(enOutHover,enInHover)
     $(".en").click(enClick)

@@ -1,6 +1,6 @@
 {
     "ntiAttr":{
-        "src":"img/subcloud.png",
+        "src":"img/interface/subcloud.png",
         "width":"100%",
         "height":"100%"
     },
@@ -44,7 +44,7 @@
     },
 
     "ngiAttr":{
-        "src":"img/subcloud.png",
+        "src":"img/interface/subcloud.png",
         "width":"100%",
         "height":"100%"
     },
@@ -56,7 +56,7 @@
     },
 
     "xbcloudAttr":{
-        "src":"img/subcloud.png",
+        "src":"img/interface/subcloud.png",
         "width":"100%",
         "height":"100%"
 

@@ -14,7 +14,7 @@
         "width":"30px",
         "src":"img/barin.png"
     },
-    "edgeCss":{
+    "edgeCSS":{
         "position":"absolute",
         "top":"-0px",
         "right":"-30px",
@@ -38,10 +38,11 @@
         "position":"absolute","top":"6.6%","right":"35%"
     },
     "selectAttr":{
-        "id":"select",
         "height":"80%",
         "width":"30%",
-        "alt":"Select level","src":"img/cc0/treasuremap-128px.png","title":"Select level"
+        "alt":"Select level",
+        "src":"img/cc0/treasuremap-128px.png",
+        "title":"Select level"
     },
     "selectCSS":{
         "position":"absolute","display":"none","bottom":"6.6%","right":"5%"

@@ -150,7 +150,7 @@ root.drawGameMap = (player) ->
       addGameToMap gameKey
 
   $('<span style="font-size:200%" class="cursiveHeadline">Choose your Java Game</span><br>').prependTo tmp1
-  $('<img src="web/img/cc0/treasuremap-128px.png">').prependTo tmp1
+  $('<img src="img/cc0/treasuremap-128px.png">').prependTo tmp1
 
   $('#gameSelection').animate {
     scrollTop: root.gameSelectionScrollPosition

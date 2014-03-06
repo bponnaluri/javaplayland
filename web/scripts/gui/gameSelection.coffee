@@ -1,38 +1,30 @@
 class window.gameSelector
   cont = null
+  config=null
   constructor: (@div, @dis) ->
     $("#acelne").remove()
-    tmp = document.createElement("div")
+    cssData=null
+    $.ajax
+      url: 'scripts/config/gameSelection.json',
+      dataType: 'json',
+      async: false,
+      success: (data)->
+        cssData=data
+    config=cssData
+    tmp=$('<div></div>')
     cont = $(tmp)
-    $(tmp).css({'height':'100%', 'overflow-y':'scroll','width':'95%','position':'relative','font-size':"20px"})
+    $(tmp).css(config["tmpCSS"])
     $(tmp).attr("id","gameSelection")
     @div.append(tmp)
     return
 
   buildDiv: (count, game, desc, player, canPlay, codeland) ->
 
-
-    cssData=null
-    $.ajax
-      url: 'scripts/config/cloud.json',
-      dataType: 'json',
-      async: false,
-      success: (data)->
-        cssData=data
-
     span = document.createElement("span")
-    $(span).css({"min-width":"450px","min-height":"32px", "padding" : "5px","display": "inline-block","white-space": "nowrap", "border":"1px dashed blue","font-family":"Monospace","background-color":"#003366","cursor": "pointer"})
-
-
-    #display and whitespace to try to avoid wrapping (may not work in IE)
-    #            if cont.width() < 1600
-    #                lp = (cont.width() - 800)/2
-    #                $(tmp1).css({left:lp})
-
+    $(span).css(config["spanCSS"])
 
     $(span).attr("id","select#{game}")
     cont.append(span)
-
 
     src = 'img/stare.png'
 
@@ -41,7 +33,7 @@ class window.gameSelector
     $(span).append  desc.title
     if player?.passed is true
       src = 'img/star.png'
-      img = jQuery '<img>', {
+      img = $ '<img>', {
         id: 'star',
         src: src,
         style: 'max-height:16px',

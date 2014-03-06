@@ -6,7 +6,9 @@
         <item url="file://$PROJECT_DIR$/web/doppio-jvm/scripts/demo/util.js" />
         <item url="file://$PROJECT_DIR$/web/scripts/setup/nodeSetup.js" />
         <item url="file://$PROJECT_DIR$/web/scripts/gui/codeland.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/gui/menuBar.js" />
         <item url="file://$PROJECT_DIR$/web/scripts/model/gridGameState.js" />
+        <item url="file://$PROJECT_DIR$/web/scripts/gui/cloud.js" />
         <item url="file://$PROJECT_DIR$/web/scripts/model/codeInterpreter.js" />
         <item url="file://$PROJECT_DIR$/web/scripts/gui/ref.js" />
         <item url="file://$PROJECT_DIR$/web/doppio-jvm/scripts/demo/test-doppio-api.js" />
@@ -26,7 +28,9 @@
       <root url="file://$PROJECT_DIR$/web/scripts/gui/gameManager.js" />
       <root url="file://$PROJECT_DIR$/web/scripts/setup/nodeSetup.js" />
       <root url="file://$PROJECT_DIR$/web/scripts/gui/codeland.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/gui/menuBar.js" />
       <root url="file://$PROJECT_DIR$/web/scripts/model/gridGameState.js" />
+      <root url="file://$PROJECT_DIR$/web/scripts/gui/cloud.js" />
       <root url="file://$PROJECT_DIR$/web/scripts/model/codeInterpreter.js" />
       <root url="file://$PROJECT_DIR$/web/doppio-jvm/scripts/demo/test-doppio-api.js" />
       <root url="file://$PROJECT_DIR$/web/scripts/gui/ref.js" />

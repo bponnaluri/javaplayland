@@ -24,28 +24,22 @@ class window.gameSelector
     $(span).css(config["spanCSS"])
 
     $(span).attr("id","select#{game}")
+    $(span).attr("class","select#{count}")
     cont.append(span)
 
-    src = 'img/interface/stare.png'
-
     $(span).click(-> codeland.startGame(game) )
-    #            $(span).append count + ' '
-    $(span).append  desc.title
-    if player?.passed is true
-      src = 'img/interface/star.png'
-      img = $ '<img>', {
-        id: 'star',
-        src: src,
-        style: 'max-height:16px',
-        alt: "Start Game"
-
-      }
-      $(span).append img.get 0
-
-#            @buildAn(tmp1,canPlay)
-#            @buildScore(tmp1,player)
-#            @buildInfo(tmp1,desc)
-#            @canPlay(tmp1,canPlay, codeland, game)
+    if player?.passed is true  #Coded by Lavanya
+        $(span).append """<b><font color="white">#{count}: #{desc.title}</font></b> """
+        src = 'img/interface/star.png'
+        img = jQuery '<img>', {
+            id: 'star',
+            src: src,
+            style: 'max-height:16px',
+            alt: "Start Game"
+        }
+        $(span).append img.get 0
+    else
+        $(span).append """<font color="white">#{count}: #{desc.title}</font>""" #Coded by Lavanya
 
   buildAn: (con,canPlay) ->
     tmp2 = $('<img></img>')

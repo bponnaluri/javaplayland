@@ -10,7 +10,7 @@ window.appendBar = (d) ->
       cssData=data
 
   toggleDrawerInOut = () ->
-    if $(edge).attr("src") == "img/interface/barin.png"
+    if $(edge).attr("src") == "img/interface/barin.png" #Lavanya
       $(cont).animate({"left":"0px"})
       $(cont).animate({"left":"-10px"})
       $(edge).attr({"src":"img/interface/barout.png"})

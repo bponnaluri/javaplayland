@@ -248,11 +248,9 @@ class window.EditorManager
         aglw = $('.ace_gutter-layer').width()
         aglh = $('.ace_gutter-cell').height()
         ###
-           ace_gutter-active-line refers to line highlighting (look at ace.js) - For now, this is fixed.
+           ace_gutter-active-line refers to line highlighting in the game level code editor (look at ace.js)
         ###
-        highlighted_line_position = $('.ace_gutter-active-line').position().top
-        console.log "Ace gutter active line " + $('.ace_gutter-active-line')
-        console.log "Highlighted line position " + highlighted_line_position 
+        highlighted_line_position = $('.ace_gutter-active-line').position()
 		
         if maxrows == row + 1
             $(".ace_downarrow").css({"display":"none"})
@@ -262,8 +260,14 @@ class window.EditorManager
         $(@acelne).css(
             {"width":"15px","max-height":aglh*2.6,
             "z-index": 20,"position":"relative",
-            "top":highlighted_line_position-aglh*1.5+"px",
             "left":0+"px","display": "block"})
+
+        ###
+            Fixing the "top" property by only setting it when highlighted_line_position is not null - temporary hack
+        ###
+        if highlighted_line_position != null
+            $(@acelne).css({"top":highlighted_line_position.top-aglh*1.5+"px"})
+
         @poffset = $(".ace_scrollbar").scrollTop()
         return
 

@@ -6,7 +6,7 @@ window.notifyEvalSourcePosition = (startLine,startCol,endLine,endCol) ->
       Shows the user the currently executing line.
       --> Where is this function called?
   ###
-  console.log "Start line:"+startLine,startCol,endLine,endCol
+  console.log startLine,startCol,endLine,endCol
   ##window.gameManager.codeEditor.editorGoToLine startLine
   return;
 
@@ -135,7 +135,7 @@ root.drawGameMap = (player) ->
 
   gameSequence = root.getGameSequence()
   sel = new gameSelector(mapDiv, false)
-  tmp1 = $("gameSelection")
+  tmp1 = document.getElementById("gameSelection")
 
   count = 0
   addGameToMap = (game) ->
@@ -144,10 +144,44 @@ root.drawGameMap = (player) ->
     sel.buildDiv(count, game, descriptions[game], player.games[game], root.canPlay(game), codeland)
     return
   qcount = 0
+  
   for quest in root.quests
-    $("<div bgcolor='#888888'>Quest #{++qcount}:#{quest.title}</div>").appendTo tmp1
+    span = jQuery '<span>', { #Lavanya
+         title: "Click here to hide/show all levels in this quest."
+         alt: "Click here to hide/show all levels in this quest.",
+         id: "#{quest.title}"
+    }
+
+    span.css {
+        "min-width": "450px",
+        "min-height": "32px",
+        "padding" : "5px",
+        "display": "inline-block",
+        "white-space": "nowrap",
+        "border":"1px dashed orange",
+        "background-color": "#ffa500",
+        "text-align": "center",
+        "font-family": "Monospace",
+        "margin: 5px",
+        "cursor": "pointer"
+    }
+
+    $(tmp1).append(span)
+    span.append """<b>QUEST #{++qcount}: #{quest.title}</b>""" 
+
+    span.click (clickEvent) ->
+        jQuery("span[id='#{clickEvent.currentTarget.id} Container']").children().toggle()
+        return
+     
+    games = jQuery '<span>', {
+        id: "#{quest.title} Container"
+    }    
+     
     for gameKey in quest.games
-      addGameToMap gameKey
+      addGameToMap gameKey, games
+
+    jQuery(tmp1).append games
+    $("<br><br>").appendTo tmp1 #Lavanya
 
   $('<span style="font-size:200%" class="cursiveHeadline">Choose your Java Game</span><br>').prependTo tmp1
   $('<img src="img/cc0/treasuremap-128px.png">').prependTo tmp1
@@ -168,6 +202,7 @@ root.startGame = (game) ->
       @param game
           The game to start.
   ###
+  $('#select').show() #Lavanya
   console.log("Starting #{game}")
   for quest, index in root.quests
     found = quest.games.indexOf game
@@ -178,7 +213,7 @@ root.startGame = (game) ->
   root.currentGame = null
 
   gamediv = $(root.UIcont)
-  tmp1 = $("gameSelection")
+  tmp1 = document.getElementById("gameSelection")
   if tmp1 != null
     root.gameSelectionScrollPosition = tmp1.scrollTop
     root.UIcont.removeChild(tmp1)
@@ -348,6 +383,7 @@ root.showMap = () ->
   root.wrapperCompiledCallback = null if root.wrapperCompiledCallback?
   root.currentGame = null
   root.drawGameMap root.getPlayer()
+  $('#select').hide() #Lavanya
   return
 
 root.getGame = ->
@@ -594,7 +630,7 @@ root.addHintsToCode = (gameData) ->
     if gameData.code.prefix.length > 1 # Ignore lonely \n
       gameData.code.prefix = one + gameData.code.prefix
     else
-    gameData.code.initial = one + '\n' + gameData.code.initial
+      gameData.code.initial = one + '\n' + gameData.code.initial
   return
 
 root.getGameDescriptions = ->
@@ -650,3 +686,4 @@ root.canPlay = (game) ->
 
   passCount++ for g in depends when player?.games[g]?.passed
   return passCount == depends.length
+

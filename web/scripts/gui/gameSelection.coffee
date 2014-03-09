@@ -26,13 +26,13 @@ class window.gameSelector
     $(span).attr("id","select#{game}")
     cont.append(span)
 
-    src = 'img/stare.png'
+    src = 'img/interface/stare.png'
 
     $(span).click(-> codeland.startGame(game) )
     #            $(span).append count + ' '
     $(span).append  desc.title
     if player?.passed is true
-      src = 'img/star.png'
+      src = 'img/interface/star.png'
       img = $ '<img>', {
         id: 'star',
         src: src,
@@ -52,14 +52,14 @@ class window.gameSelector
     $(con).append(tmp2)
     $(tmp2).css(config["tmp2CSS"])
     derp = () ->
-      if $(tmp2).attr("src") is "img/wmn1_fr1.gif"
-        $(tmp2).attr("src","img/wmn1_fr2.gif")
+      if $(tmp2).attr("src") is "img/game/characters/wmn1_fr1.gif"
+        $(tmp2).attr("src","img/game/characters/wmn1_fr2.gif")
       else
-        $(tmp2).attr("src","img/wmn1_fr1.gif")
+        $(tmp2).attr("src","img/game/characters/wmn1_fr1.gif")
     if canPlay
       setInterval(derp,450)
     else
-      $(tmp2).attr("src","img/wmn1_fr1.gif")
+      $(tmp2).attr("src","img/game/characters/wmn1_fr1.gif")
 
   buildScore: (con,player) ->
     tmp = $('<div></div>')
@@ -85,9 +85,9 @@ class window.gameSelector
       $(tmp3).text("Stars: #{player?.stars}")
     else
       for ns in [1..player?.stars] by 1
-        $(tmp).append("<img src='img/star.png' width='20%' height='20%'></img>")
+        $(tmp).append("<img src='img/interface/star.png' width='20%' height='20%'></img>")
       for es in [player?.stars...3] by 1
-        $(tmp).append("<img src='img/stare.png' width='20%' height='20%'></img>")
+        $(tmp).append("<img src='img/interface/stare.png' width='20%' height='20%'></img>")
     return
 
   buildInfo: (con,desc) ->

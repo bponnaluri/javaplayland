@@ -13,11 +13,11 @@ window.appendBar = (d) ->
     if $(edge).attr("src") == "img/barin.png"
       $(cont).animate({"left":"0px"})
       $(cont).animate({"left":"-10px"})
-      $(edge).attr({"src":"img/barout.png"})
+      $(edge).attr({"src":"img/interface/barout.png"})
     else
       $(cont).animate({"left":"0px"})
       $(cont).animate({"left":"-150px"})
-      $(edge).attr({"src":"img/barin.png"})
+      $(edge).attr({"src":"img/interface/barin.png"})
     return false
 
 

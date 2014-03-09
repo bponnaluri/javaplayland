@@ -112,7 +112,7 @@ window.objCloud = (dim,par,obj,x,y,tscale,ng,man) ->
     $(xb).attr(cssData["xbAttr"])
     $(xb).css(cssData["xbCSS"])
      
-    $(cloud).attr({"src":"img/cloud.png","align":"middle","width":$(window).width()/2,"height":$(window).height()/2}) #Lavanya
+    $(cloud).attr({"src":"img/interface/cloud.png","align":"middle","width":$(window).width()/2,"height":$(window).height()/2}) #Lavanya
     $(cont).css({"position":"absolute","top":x,"left":y,"z-index":"297"})
     $(text).css(cssData["textCSS"])
 

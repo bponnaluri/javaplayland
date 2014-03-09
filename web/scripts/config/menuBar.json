@@ -12,7 +12,7 @@
     },
     "edgeAttr":{
         "width":"30px",
-        "src":"img/barin.png"
+        "src":"img/interface/barin.png"
     },
     "edgeCSS":{
         "position":"absolute",
@@ -38,6 +38,7 @@
         "position":"absolute","top":"6.6%","right":"35%"
     },
     "selectAttr":{
+		"id":"select",
         "height":"80%",
         "width":"30%",
         "alt":"Select level",
@@ -48,9 +49,9 @@
         "position":"absolute","display":"none","bottom":"6.6%","right":"5%"
     },
     "drawerToggle":{
-      "inImg":"img/barin.png",
+      "inImg":"img/interface/barin.png",
       "inAnim":{"left":"-10px"},
-      "outImg":"img/barout.png",
+      "outImg":"img/interface/barout.png",
       "outAnim":{"right":"-150px"}
 
     },

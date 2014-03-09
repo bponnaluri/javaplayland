@@ -11,7 +11,7 @@
     },
 
     "ntlAttr":{
-        "src":"img/larrow.png",
+        "src":"img/interface/larrow.png",
         "width":"15%"
     },
     "ntlCSS":{
@@ -22,7 +22,7 @@
     },
 
     "ntrAttr":{
-        "src":"img/rarrow.png",
+        "src":"img/interface/rarrow.png",
         "width":"15%"
     },
     "ntrCSS":{
@@ -66,7 +66,7 @@
         "right":"0%"
     },
     "xbAttr":{
-        "src":"img/x.png",
+        "src":"img/interface/x.png",
         "width":"50%",
         "height":"50%",
         "z-index":"298"
@@ -87,15 +87,15 @@
 
     },
     "rArrowAttr":{
-        "src":"img/rarrow.png",
+        "src":"img/interface/rarrow.png",
         "width":"15%"
     },
     "lArrowAttr":{
-        "src":"img/larrow.png",
+        "src":"img/interface/larrow.png",
         "width":"15%"
     },
     "rArrowHighAttr":{
-        "src":"img/rarrowhigh.png",
+        "src":"img/interface/rarrowhigh.png",
         "width":"15%"
     }
 

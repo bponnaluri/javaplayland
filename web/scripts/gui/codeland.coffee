@@ -8,7 +8,7 @@ window.notifyEvalSourcePosition = (startLine,startCol,endLine,endCol) ->
   ###
   console.log startLine,startCol,endLine,endCol
   ##window.gameManager.codeEditor.editorGoToLine startLine
-  return;
+  return
 
 # Things assigned to root will be available outside this module
 root = exports ? this.codeland = {}
@@ -29,8 +29,6 @@ root.initialize = (UIcont) ->
   console.log("Loading")
   $('#copyrightinfo').click -> window.AboutPage()
   root.gameSelectionScrollPosition = 0
-
-
   root.loadJSONConfigs()
   root.UIcont = UIcont
   root.initializeDoppio()
@@ -45,14 +43,13 @@ root.initializeDoppio = ->
   root.doppioReady = false
   root.doppioPreloaded = false
   progress = $('#progress')
-  count = 0;
+  count = 0
   last_display = ""
   progress_cb = (ignore_incorrect_fraction) ->
     ###
         Handles the progress bar and displaying what part of Doppio is loading
         to the user.
     ###
-    displayConst=391
     count = count + 1
     display = Math.floor((100*count) / 391)
     if (display == 100)
@@ -144,35 +141,39 @@ root.drawGameMap = (player) ->
     sel.buildDiv(count, game, descriptions[game], player.games[game], root.canPlay(game), codeland)
     return
   qcount = 0
-  
+  currGameIdx = 0
+  arrayOfIdx = []
+
   for quest in root.quests
-    span = jQuery '<span>', { #Lavanya
-         title: "Click here to hide/show all levels in this quest."
-         alt: "Click here to hide/show all levels in this quest.",
-         id: "#{quest.title}"
+    span = document.createElement("span")
+    
+    $(span).attr {
+      class: "span" + (++qcount)
+      alt: "Click here to hide/show all levels in this quest."
+      title: "Click here to hide/show all levels in this quest."
+    }	
+
+    $(span).css {
+     "min-width": "450px"
+     "min-height": "32px"
+     "padding": "5px"
+     "display": "inline-block"
+     "white-space": "nowrap"
+     "border": "1px dashed orange"
+     "background-color": "#ffa500"
+     "text-align": "center"
+     "font-family": "Monospace"
+     "cursor": "pointer"
     }
 
-    span.css {
-        "min-width": "450px",
-        "min-height": "32px",
-        "padding" : "5px",
-        "display": "inline-block",
-        "white-space": "nowrap",
-        "border":"1px dashed orange",
-        "background-color": "#ffa500",
-        "text-align": "center",
-        "font-family": "Monospace",
-        "margin: 5px",
-        "cursor": "pointer"
-    }
+    $(tmp1).append span
 
-    $(tmp1).append(span)
-    span.append """<b>QUEST #{++qcount}: #{quest.title}</b>""" 
+    $(span).append "<b>QUEST " + qcount + ": " + quest.title + "</b>"
 
     span.click (clickEvent) ->
         jQuery("span[id='#{clickEvent.currentTarget.id} Container']").children().toggle()
         return
-     
+
     games = jQuery '<span>', {
         id: "#{quest.title} Container"
     }    
@@ -181,10 +182,40 @@ root.drawGameMap = (player) ->
       addGameToMap gameKey, games
 
     jQuery(tmp1).append games
+    currGameIdx = currGameIdx + quest.games.length
+    arrayOfIdx[qcount - 1] = currGameIdx
     $("<br><br>").appendTo tmp1 #Lavanya
+    
+  selectCount = 1 #Lavanya
+  whileCounter = 0
+  arrayOfStrings = []
+  arrayOfSpans = []
+  while whileCounter < arrayOfIdx.length
+    arrayOfStrings[whileCounter] = ""
+    while selectCount < arrayOfIdx[whileCounter]
+      arrayOfStrings[whileCounter] = "" + arrayOfStrings[whileCounter] + ".select" + selectCount + ","
+      selectCount = selectCount + 1
+    arrayOfStrings[whileCounter] = "" + arrayOfStrings[whileCounter] + ".select" + arrayOfIdx[whileCounter]
+    console.log arrayOfStrings[whileCounter]
+    arrayOfSpans[whileCounter] = ".span" + (whileCounter + 1)
+    console.log arrayOfSpans[whileCounter]
+    selectCount = arrayOfIdx[whileCounter] + 1
+    whileCounter = whileCounter + 1
 
-  $('<span style="font-size:200%" class="cursiveHeadline">Choose your Java Game</span><br>').prependTo tmp1
-  $('<img src="img/cc0/treasuremap-128px.png">').prependTo tmp1
+  spanCounter = 0
+  $(arrayOfSpans[spanCounter]).click ->
+    $(arrayOfStrings[spanCounter]).toggle()
+
+  spanCounterTwo = spanCounter + 1
+  $(arrayOfSpans[spanCounterTwo]).click ->
+    $(arrayOfStrings[spanCounterTwo]).toggle()
+
+  spanCounterThree = spanCounterTwo + 1
+  $(arrayOfSpans[spanCounterThree]).click ->
+    $(arrayOfStrings[spanCounterThree]).toggle()
+
+  $('<span style="font-size:100%" class="cursiveHeadline">Choose a level below.</span><br><br>').prependTo tmp1
+  $('<span style="font-size:200%" class="cursiveHeadline">CodeMoo Java Game</span><br>').prependTo tmp1
 
   $('#gameSelection').animate {
     scrollTop: root.gameSelectionScrollPosition
@@ -299,7 +330,7 @@ root.load = (key) ->
   ###
       Internal Function (used only by the code in this file)
 
-      Retreives and parses data from the localstorage and returns it.
+      Retrieves and parses data from the local storage and returns it.
 
       @param key
           The key of the data to load.

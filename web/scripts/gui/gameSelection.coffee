@@ -19,7 +19,6 @@ class window.gameSelector
     return
 
   buildDiv: (count, game, desc, player, canPlay, codeland) ->
-
     span = document.createElement("span")
     $(span).css(config["spanCSS"])
 
@@ -45,15 +44,17 @@ class window.gameSelector
     tmp2 = $('<img></img>')
     $(con).append(tmp2)
     $(tmp2).css(config["tmp2CSS"])
+	
     derp = () ->
       if $(tmp2).attr("src") is "img/game/characters/wmn1_fr1.gif"
         $(tmp2).attr("src","img/game/characters/wmn1_fr2.gif")
       else
         $(tmp2).attr("src","img/game/characters/wmn1_fr1.gif")
+   
     if canPlay
-      setInterval(derp,450)
+       setInterval(derp,450)
     else
-      $(tmp2).attr("src","img/game/characters/wmn1_fr1.gif")
+       $(tmp2).attr("src","img/game/characters/wmn1_fr1.gif")
 
   buildScore: (con,player) ->
     tmp = $('<div></div>')

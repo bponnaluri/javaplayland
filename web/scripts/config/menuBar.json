@@ -29,13 +29,21 @@
 
     },
     "refCSS":{
-        "position":"absolute","top":"6.6%","right":"65%"
+        "position":"absolute",
+        "top":"6.6%",
+        "right":"65%"
     },
     "sandAttr":{
-        "height":"80%","width":"30%","alt":"Code Sandbox","src":"img/cc-bynd/keyboard.png","title":"Code sandbox"
+        "height":"80%",
+        "width":"30%",
+        "alt":"Code Sandbox",
+        "src":"img/cc-bynd/keyboard.png",
+        "title":"Code sandbox"
     },
     "sandCSS":{
-        "position":"absolute","top":"6.6%","right":"35%"
+        "position":"absolute",
+        "top":"6.6%",
+        "right":"35%"
     },
     "selectAttr":{
 		"id":"select",
@@ -46,7 +54,10 @@
         "title":"Select level"
     },
     "selectCSS":{
-        "position":"absolute","display":"none","bottom":"6.6%","right":"5%"
+        "position":"absolute",
+        "display":"none",
+        "bottom":"6.6%",
+        "right":"5%"
     },
     "drawerToggle":{
       "inImg":"img/interface/barin.png",
@@ -56,8 +67,4 @@
 
     },
     "pSize":"90"
-
-
-
-
 }

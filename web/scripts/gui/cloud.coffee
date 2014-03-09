@@ -129,11 +129,7 @@ window.objCloud = (dim,par,obj,x,y,tscale,ng,man) ->
     # Width is 75%, leaving 25% left to play with
     left=0.125*dim
     $(text).css({"left":left+"px"})
-    #Removed vertical centering - looks better without it
-
 
     $(xb).click(() -> $(cont).remove();$(backdrop).remove())
 
     return
-
-

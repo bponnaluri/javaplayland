@@ -34,6 +34,7 @@ class window.GameManager
             console.log("Loaded data:"+data)
         console.log(cssData)
         @cssCfg=cssData
+		
         @config = deepcopy @environment.description
         @gameStateBase = @environment.gameState
 

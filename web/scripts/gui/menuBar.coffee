@@ -10,7 +10,7 @@ window.appendBar = (d) ->
       cssData=data
 
   toggleDrawerInOut = () ->
-    if $(edge).attr("src") == "img/barin.png"
+    if $(edge).attr("src") == "img/interface/barin.png"
       $(cont).animate({"left":"0px"})
       $(cont).animate({"left":"-10px"})
       $(edge).attr({"src":"img/interface/barout.png"})
@@ -25,8 +25,8 @@ window.appendBar = (d) ->
   edge = $('<img></img')
 
   ref = $('<img></img>')
-  select=$('<img></img>')
-  sand=$('<img></img>')
+  select = $('<img></img>')
+  sand = $('<img></img>')
 
   $(cont).css(cssData["cont"])
   $(edge).attr(cssData["edgeAttr"])
@@ -48,7 +48,6 @@ window.appendBar = (d) ->
   $(select).click codeland.showMap
   $(sand).click sandBoxPage
 
-  #$(cont).children().click(toggleDrawerInOut)
   $(toggleDrawerInOut)
-
   $(d).append(cont)
+  

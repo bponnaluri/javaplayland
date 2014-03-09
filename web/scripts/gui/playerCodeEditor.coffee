@@ -247,8 +247,13 @@ class window.EditorManager
         maxrows = @editor.editSession.getLength()
         aglw = $('.ace_gutter-layer').width()
         aglh = $('.ace_gutter-cell').height()
-        aalt = $('.ace_gutter-active-line').position().top
-
+        ###
+           ace_gutter-active-line refers to line highlighting (look at ace.js) - For now, this is fixed.
+        ###
+        highlighted_line_position = $('.ace_gutter-active-line').position().top
+        console.log "Ace gutter active line " + $('.ace_gutter-active-line')
+        console.log "Highlighted line position " + highlighted_line_position 
+		
         if maxrows == row + 1
             $(".ace_downarrow").css({"display":"none"})
         else
@@ -257,7 +262,7 @@ class window.EditorManager
         $(@acelne).css(
             {"width":"15px","max-height":aglh*2.6,
             "z-index": 20,"position":"relative",
-            "top":aalt-aglh*1.5+"px",
+            "top":highlighted_line_position-aglh*1.5+"px",
             "left":0+"px","display": "block"})
         @poffset = $(".ace_scrollbar").scrollTop()
         return

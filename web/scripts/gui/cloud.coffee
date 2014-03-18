@@ -6,13 +6,7 @@ window.playAudio = (name) ->
 
 window.objCloud = (dim,par,obj,x,y,tscale,ng,man) ->
 
-    cssData=null
-    $.ajax
-      url: 'scripts/config/cloud.json',
-      dataType: 'json',
-      async: false,
-      success: (data)->
-        cssData=data
+    cssData=findConfig('scripts/config/cloud.json')
 
     tipnum = 0
     resizeCloud = () ->

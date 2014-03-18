@@ -24,16 +24,7 @@ class window.GameManager
                 The environment and configuration required for this game.
         ###
 
-        cssData=null
-        $.ajax
-          url: 'scripts/config/gameManager.json',
-          dataType: 'json',
-          async: false,
-          success: (data)->
-            cssData=data
-            console.log("Loaded data:"+data)
-        console.log(cssData)
-        @cssCfg=cssData
+        @cssCfg=findConfig('scripts/config/gameManager.json')
 		
         @config = deepcopy @environment.description
         @gameStateBase = @environment.gameState

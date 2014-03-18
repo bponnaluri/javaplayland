@@ -3,14 +3,8 @@ class window.gameSelector
   config=null
   constructor: (@div, @dis) ->
     $("#acelne").remove()
-    cssData=null
-    $.ajax
-      url: 'scripts/config/gameSelection.json',
-      dataType: 'json',
-      async: false,
-      success: (data)->
-        cssData=data
-    config=cssData
+
+    config=findConfig('scripts/config/gameSelection.json')
     tmp=$('<div></div>')
     cont = $(tmp)
     $(tmp).css(config["tmpCSS"])
@@ -30,7 +24,7 @@ class window.gameSelector
     if player?.passed is true  #Coded by Lavanya
         $(span).append """<b><font color="white">#{count}: #{desc.title}</font></b> """
         src = 'img/interface/star.png'
-        img = jQuery '<img>', {
+        img = $ '<img>', {
             id: 'star',
             src: src,
             style: 'max-height:16px',
@@ -44,17 +38,18 @@ class window.gameSelector
     tmp2 = $('<img></img>')
     $(con).append(tmp2)
     $(tmp2).css(config["tmp2CSS"])
-	
-    derp = () ->
-      if $(tmp2).attr("src") is "img/game/characters/wmn1_fr1.gif"
-        $(tmp2).attr("src","img/game/characters/wmn1_fr2.gif")
+
+    images=config["images"]
+    problem = () ->
+      if $(tmp2).attr("src") is images["womanFrontA"]
+        $(tmp2).attr("src",images["womanFrontB"])
       else
-        $(tmp2).attr("src","img/game/characters/wmn1_fr1.gif")
+        $(tmp2).attr("src",images["womanFrontA"])
    
     if canPlay
-       setInterval(derp,450)
+       setInterval(problem,450)
     else
-       $(tmp2).attr("src","img/game/characters/wmn1_fr1.gif")
+       $(tmp2).attr("src",images["womanFrontA"])
 
   buildScore: (con,player) ->
     tmp = $('<div></div>')

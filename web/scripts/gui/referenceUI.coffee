@@ -17,13 +17,8 @@ class sandBoxInfo
         pageSize= pSize
         dData=null
         console.log("Starting")
-        $.ajax
-          url: 'scripts/config/referenceUI.json',
-          dataType: 'json',
-          async: false,
-          success: (data)->
-            dData=data
-        cssData=dData
+        cssData=findConfig('scripts/config/referenceUI.json')
+
 
     '''
     This sets up the IO area.

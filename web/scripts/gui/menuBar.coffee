@@ -1,13 +1,8 @@
 window.appendBar = (d) ->
 
   $("#acelne").remove()
-  cssData=null
-  $.ajax
-    url: 'scripts/config/menuBar.json',
-    dataType: 'json',
-    async: false,
-    success: (data)->
-      cssData=data
+  cssData=findConfig('scripts/config/menuBar.json')
+
 
   toggleDrawerInOut = () ->
     if $(edge).attr("src") == "img/interface/barin.png" #Lavanya

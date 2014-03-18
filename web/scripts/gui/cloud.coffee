@@ -1,8 +1,4 @@
 
-window.playAudio = (name) ->
-	sound = document.createElement("video")
-	$(sound).attr({"src":"audio/"+name,"autoplay":"true"})
-	return
 
 window.objCloud = (dim,par,obj,x,y,tscale,ng,man) ->
 

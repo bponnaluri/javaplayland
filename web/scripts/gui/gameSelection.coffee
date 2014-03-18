@@ -5,14 +5,14 @@ class window.gameSelector
     $("#acelne").remove()
 
     config=findConfig('scripts/config/gameSelection.json')
-    tmp=$('<div></div>')
+    tmp=makeDiv(null,config["tmpCSS"])
     cont = $(tmp)
-    $(tmp).css(config["tmpCSS"])
     $(tmp).attr("id","gameSelection")
     @div.append(tmp)
     return
 
   buildDiv: (count, game, desc, player, canPlay, codeland) ->
+
     span = document.createElement("span")
     $(span).css(config["spanCSS"])
 
@@ -35,9 +35,8 @@ class window.gameSelector
         $(span).append """<font color="white">#{count}: #{desc.title}</font>""" #Coded by Lavanya
 
   buildAn: (con,canPlay) ->
-    tmp2 = $('<img></img>')
+    tmp2 = makeImgElem(null,config["tmp2CSS"])
     $(con).append(tmp2)
-    $(tmp2).css(config["tmp2CSS"])
 
     images=config["images"]
     problem = () ->
@@ -52,9 +51,9 @@ class window.gameSelector
        $(tmp2).attr("src",images["womanFrontA"])
 
   buildScore: (con,player) ->
-    tmp = $('<div></div>')
+    tmp=makeDiv(null,config["tmpBuildScoreCSS"])
+
     $(con).append(tmp)
-    $(tmp).css(config["tmpBuildScoreCSS"])
 
     tmp1 = $('<p></p>')
     tmp2 = $('<p></p>')
@@ -81,9 +80,9 @@ class window.gameSelector
     return
 
   buildInfo: (con,desc) ->
-    tmp = $('<div></div>')
+    tmp=makeDiv(null,cssData["tmpBuildInfoCSS"])
+
     $(con).append(tmp)
-    $(tmp).css(cssData["tmpBuildInfoCSS"])
 
     tmp1 = $('<p></p>')
     tmp2 = $('<p></p>')
@@ -99,6 +98,6 @@ class window.gameSelector
     if cp
       $(con).click( -> codeland.startGame(game) )
     else
+      over=makeDiv(null,cssData["tmpOverCSS"])
       ovr = $('<div></div>')
       $(con).prepend(ovr)
-      $(ovr).css(cssData["tmpOverCSS"])

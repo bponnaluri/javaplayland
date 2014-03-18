@@ -6,7 +6,7 @@ window.notifyEvalSourcePosition = (startLine,startCol,endLine,endCol) ->
       Shows the user the currently executing line.
       --> Where is this function called?
   ###
-  console.log startLine,startCol,endLine,endCol
+  console.log "Start line:"+startLine,"Start col:"+startCol,"End line:"+endLine,"End col:"+endCol
   ##window.gameManager.codeEditor.editorGoToLine startLine
   return
 
@@ -487,7 +487,7 @@ root.readJSON = (theurl, cb) ->
   fail = false
   console.log "Reading #{theurl}"
   try
-    jQuery.ajax {
+    $.ajax {
       dataType: 'json',
       url: theurl,
       async: false,

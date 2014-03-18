@@ -16,23 +16,12 @@ window.appendBar = (d) ->
     return false
 
 
-  cont = $('<div></div>')
-  edge = $('<img></img')
+  cont = makeDiv(null,cssData["cont"])
+  edge=makeImgElem(cssData["edgeAttr"],cssData["edgeCSS"])
+  ref=makeImgElem(cssData["refAttr"],cssData["refCSS"])
+  select=makeImgElem(cssData["selectAttr"],cssData["selectCSS"])
+  sand=makeImgElem(cssData["sandAttr"],cssData["sandCSS"])
 
-  ref = $('<img></img>')
-  select = $('<img></img>')
-  sand = $('<img></img>')
-
-  $(cont).css(cssData["cont"])
-  $(edge).attr(cssData["edgeAttr"])
-  $(edge).css(cssData["edgeCSS"])
-
-  $(ref).attr(cssData["refAttr"])
-  $(ref).css(cssData["refCSS"])
-  $(sand).attr(cssData["sandAttr"])
-  $(sand).css(cssData["sandCSS"])
-  $(select).attr(cssData["selectAttr"])
-  $(select).css(cssData["selectCSS"])
 
   $(cont).append(ref)
   $(cont).append(select)

@@ -21,7 +21,17 @@
         "top":"4px",
         "z-index":"320"
 
-    }
+    },
+    "refCSS":{
+        "width": "10%",
+        "height": "10%",
+        "position":"absolute",
+        "right":"5%",
+        "top":"5%",
+        "border":"1px solid black",
+        "overflow":"auto"
+
+  }
 
 
 

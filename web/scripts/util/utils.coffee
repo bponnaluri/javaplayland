@@ -1,3 +1,4 @@
+#This file contains miscalleneous utility files.
 
 #Synchronously loads the config file
 findConfig=(loc)->
@@ -12,6 +13,12 @@ findConfig=(loc)->
 
 
 #Play audio
+playAudio = (name) ->
+  sound = document.createElement("video")
+  $(sound).attr({"src":"audio/"+name,"autoplay":"true"})
+  return
 
 
+
+window.playAudio=playAudio
 window.findConfig=findConfig

@@ -27,8 +27,8 @@ class sandBoxInfo
     setupInput: () ->
         vSize= pageSize+"%"  #The vertical size of each panel.
         hSize = pageSize/2+"%" #The horizontal size of each panel.
-        input=$('<div></div>')
-        output=$('<div></div>')   
+        input=makeDiv(null,null)
+        output=makeDiv(null,null)
         $(input).css({width:''+hSize,height:''+vSize,position:'absolute',left:'3.3%',top:'5%','border':'1px solid black'})
         $(output).css({width:''+hSize,height:''+vSize,"padding-left":"1%",position:'absolute',right:'3.3%',top:'5%','border':'1px solid black',"overflow":"auto"})
 
@@ -49,17 +49,12 @@ class sandBoxInfo
         $(refContainer).prepend(output)
 
     setupBackFade: () ->
-        backFade = $('<div></div>')
-        $(backFade).css(cssData["backFadeCSS"])
+        backFade=makeDiv({id:'bF'},cssData["backFadeCSS"])
         $("body").prepend(backFade)
-        $(backFade).attr({id:'bF'})
 
     setupEnlarge: () ->
-        en1=$('<img></img>')
-        en2=$('<img></img>')
-        $(en1).attr({'src':'img/interface/enlarge1.png',class:'en'})
-        $(en2).attr({'src':'img/interface/enlarge1.png',class:'en'})
-        $(en1).css(cssData["en1CSS"])
+        en1=maeImgElem({'src':'img/interface/enlarge1.png',class:'en'},cssData["en1CSS"])
+        en2=maeImgElem({'src':'img/interface/enlarge1.png',class:'en'},cssData["en2CSS"])
         $(en2).css(cssData["en2CSS"])
         $(input).append(en1)
         $(output).append(en2)
@@ -168,12 +163,18 @@ window.referencePage = (pageSize) ->
     ref = document.createElement("div")
 
     pSize= pageSize+"%"
-    ref = $('<div></div>')
-    $(ref).css({width: "10%",height: "10%",position:'absolute',right:'5%',top:'5%','border':'1px solid black',"overflow":"auto"})
+
+    ref=makeDiv("none",{width: "10%",height: "10%",position:'absolute',right:'5%',top:'5%','border':'1px solid black',"overflow":"auto"})
 
 
 
-    inject(ref)
+
+    $.ajax
+      url: 'scripts/config/refUIData.txt',
+      dataType: 'json',
+      async: false,
+      success: (data)->
+        d.innerHTML = data
 
     examples = $(ref).children(".ex")
 

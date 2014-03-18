@@ -52,20 +52,11 @@ class window.GameManager
         ###
         @gameDiv = $ @environment.gamediv
         @gameDiv.empty()
-        editdiv = $('<div></div>')
-        vis = $('<div></div>')
-        butdiv=$('<div></div>')
-
-        $(editdiv).attr({'id':@editorDiv,'class':'code_editor'})
-        $(editdiv).css(@cssCfg["editDivCSS"])
-
+        butdiv=makeDiv()
+        editdiv=makeDiv({'id':@editorDiv,'class':'code_editor'},@cssCfg["editDivCSS"])
         @gameDiv.append(editdiv)
-
-        $(vis).attr({'id':@visualDiv})
-        $(vis).css(@cssCfg["visCSS"])
+        vis = makeDiv({'id':@visualDiv},@cssCfg["visCSS"])
         @gameDiv.append(vis)
-
-
         eDiv=@cssCfg["editDiv"]
         for i in [0..3]
           $(editdiv).append(eDiv[i])

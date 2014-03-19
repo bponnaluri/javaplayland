@@ -263,7 +263,8 @@ class window.EditorManager
             "left":0+"px","display": "block"})
 
         ###
-            Fixing the "top" property by only setting it when highlighted_line_position is not null - temporary hack
+            Fixing the "top" property by only setting it when highlighted_line_position is not null - temporary HACK HACK HACK!!!
+			TODO: Why the top property is null and why we need this hack
         ###
         if highlighted_line_position != null
             $(@acelne).css({"top":highlighted_line_position.top-aglh*1.5+"px"})

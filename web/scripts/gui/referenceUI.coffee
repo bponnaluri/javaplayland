@@ -53,8 +53,8 @@ class sandBoxInfo
         $("body").prepend(backFade)
 
     setupEnlarge: () ->
-        en1=maeImgElem({'src':'img/interface/enlarge1.png',class:'en'},cssData["en1CSS"])
-        en2=maeImgElem({'src':'img/interface/enlarge1.png',class:'en'},cssData["en2CSS"])
+        en1=makeImgElem({'src':'img/interface/enlarge1.png',class:'en'},cssData["en1CSS"])
+        en2=makeImgElem({'src':'img/interface/enlarge1.png',class:'en'},cssData["en2CSS"])
         $(en2).css(cssData["en2CSS"])
         $(input).append(en1)
         $(output).append(en2)
@@ -104,17 +104,17 @@ window.sandBoxPage = (pageSize) ->
         $(".en").click(clClick)
     closeClick = () ->
         console.log("Making smaller")
-        $(backFade).remove()
-        $(refContainer).remove()
+        $(sPanel.getBackFade()).remove()
+        $(sPanel.getRefContainer()).remove()
         codeland.doppioAPI.abort()
     clClick = () ->
         $(this).unbind()
 
-        $(input).stop()
-        $(output).stop()
+        $(sPanel.getInput()).stop()
+        $(sPanel.getOutput()).stop()
 
-        $(input).animate({width:'45%',height:'90%',opacity:'1'})
-        $(output).animate({width:'45%',height:'90%',opacity:'1'})
+        $(sPanel.getInput()).animate({width:'45%',height:'90%',opacity:'1'})
+        $(sPanel.getOutput()).animate({width:'45%',height:'90%',opacity:'1'})
 
         $(".en").hover(enOutHover,enInHover)
         $(".en").click(enClick)
@@ -156,9 +156,10 @@ window.referencePage = (pageSize) ->
     sPanel.setupRefContainer()
     sPanel.setupBackFade()
 
-    $("body").prepend(backFade)
-    $(backFade).attr({id:'bF'})
-    $("body").prepend(refContainer)
+
+    $("body").prepend(sPanel.getBackFade())
+    $(sPanel.getBackFade()).attr({id:'bF'})
+    $("body").prepend(sPanel.getRefContainer())
 
     ref = document.createElement("div")
 
@@ -183,8 +184,8 @@ window.referencePage = (pageSize) ->
 
 
     closeClick = () ->
-        $(backFade).remove()
-        $(refContainer).remove()
+        $(sPanel.getBackFade()).remove()
+        $(sPanel.getRefContainer()).remove()
         codeland.doppioAPI.abort()
 
     

@@ -4,7 +4,7 @@ editorCount = 0
 
 
 #This class represents the sandbox used to run Java code.
-class sandBoxInfo 
+class sandBoxInfo
 
     backFade = null
     refContainer = null
@@ -32,7 +32,7 @@ class sandBoxInfo
         $(input).css({width:''+hSize,height:''+vSize,position:'absolute',left:'3.3%',top:'5%','border':'1px solid black'})
         $(output).css({width:''+hSize,height:''+vSize,"padding-left":"1%",position:'absolute',right:'3.3%',top:'5%','border':'1px solid black',"overflow":"auto"})
 
-    ''' 
+    '''
     This sets up the reference container.
     @param pageSize Represents the size of the reference container.
     '''
@@ -61,7 +61,7 @@ class sandBoxInfo
 
     #These are accessor methods for getting divs.
     getInput: () ->
-        return input          
+        return input
 
     getOutput: () ->
         return output
@@ -75,9 +75,9 @@ class sandBoxInfo
 '''This method adds a Java sandbox to the current page and returns information about it.
    @param pageSize Represents the size of the input and output areas on the display panel.
 '''
-window.sandBoxPage = (pageSize) ->
+window.sandBoxPage = () ->
 
-
+    pageSize=90
     sPanel= new sandBoxInfo(pageSize)
     sPanel.setupInput()
     sPanel.setupBackFade(300)
@@ -149,52 +149,38 @@ window.sandBoxPage = (pageSize) ->
 '''This method adds a panel containing an introduction to Java to the page.
    @param size Represents the size of the display panel.
 '''
-window.referencePage = (pageSize) ->
+window.referencePage = () ->
+  backFade = document.createElement("div")
+  refContainer = document.createElement("div")
 
-    
-    sPanel= new sandBoxInfo(pageSize)
-    sPanel.setupRefContainer()
-    sPanel.setupBackFade()
+  $(backFade).css({width:'100%',height:'100%',position:'absolute','z-index':'300','background-color':'#000000','opacity':'.5'})
+  $(refContainer).css({width:'90%',height:'90%',left:'5%',top:'5%',position:'absolute','z-index':'301','background-color':'#FFFFFF'})
 
+  $("body").prepend(backFade)
+  $(backFade).attr({id:'bF'})
+  $("body").prepend(refContainer)
 
-    $("body").prepend(sPanel.getBackFade())
-    $(sPanel.getBackFade()).attr({id:'bF'})
-    $("body").prepend(sPanel.getRefContainer())
+  ref = document.createElement("div")
 
-    ref = document.createElement("div")
+  $(ref).css({width:'90%',height:'90%',position:'absolute',right:'5%',top:'5%','border':'1px solid black',"overflow":"auto"})
 
-    pSize= pageSize+"%"
+  inject(ref)
 
-    ref=makeDiv("none",{width: "10%",height: "10%",position:'absolute',right:'5%',top:'5%','border':'1px solid black',"overflow":"auto"})
+  examples = $(ref).children(".ex")
 
+  $(refContainer).prepend(ref)
 
+  closeClick = () ->
+    $(backFade).remove()
+    $(refContainer).remove()
+    codeland.doppioAPI.abort()
 
+  $("#bF").click(closeClick)
 
-    $.ajax
-      url: 'scripts/config/refUIData.txt',
-      dataType: 'json',
-      async: false,
-      success: (data)->
-        d.innerHTML = data
-
-    examples = $(ref).children(".ex")
-
-
-    $(sPanel.getRefContainer()).prepend(ref)
+  for sel in [0...examples.size()]
+    setUpExample(examples.eq(sel))
 
 
-    closeClick = () ->
-        $(sPanel.getBackFade()).remove()
-        $(sPanel.getRefContainer()).remove()
-        codeland.doppioAPI.abort()
-
-    
-    $("#bF").click(closeClick)
-
-    for sel in [0...examples.size()]
-        setUpExample(examples.eq(sel))
-
-    return sPanel
 
 setUpExample = (dive) ->
     text = $(dive).text()

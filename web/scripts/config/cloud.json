@@ -1,12 +1,4 @@
 {
-    "ntcCSS":{
-        "position":"absolute",
-        "z-index":"310",
-        "bottom":"-10%",
-        "right":"-5%",
-        "width":dim/2,
-        "height":dim/7
-    },
     "ntiAttr":{
         "src":"img/interface/subcloud.png",
         "width":"100%",
@@ -28,7 +20,6 @@
         "top":"30%",
         "left":"30%"
     },
-
     "ntrAttr":{
         "src":"img/interface/rarrow.png",
         "width":"15%"
@@ -103,21 +94,5 @@
     "rArrowHighAttr":{
         "src":"img/interface/rarrowhigh.png",
         "width":"15%"
-    }
-    "ngcoCSS":{
-        "position":"absolute",
-        "z-index":"310",
-        "bottom":"0%",
-        "right":"0%",
-        "width":dim/2,
-        "height":dim/7
-    }
-    "ngtCSS":{
-        "position":"absolute",
-        "z-index":"302",
-        "top":"35%",
-        "text-align":"center",
-        "height":dim/10,
-        "width":"100%"
     }
 }

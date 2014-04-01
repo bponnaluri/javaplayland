@@ -9,6 +9,8 @@ findConfig=(loc)->
     async: false,
     success: (data)->
       cssData=data
+    error:(jqXHR,st,err)->
+      console.log("Error loading:"+err)
   return cssData
 
 

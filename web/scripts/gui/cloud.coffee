@@ -1,12 +1,4 @@
-###
-	Window is an object.
-	We want to create a global function so we are attaching playAudio to this object.
-	This is used in gameManager.coffee to play the winning and losing sounds when someone finishes a game.
-###
-window.playAudio = (name) ->
-	sound = document.createElement("video")
-	$(sound).attr({"src":"audio/"+name,"autoplay":"true"})
-	return
+
 
 ###
     Constructor for cloud
@@ -21,16 +13,12 @@ window.playAudio = (name) ->
 ###
 window.objCloud = (dim,par,obj,x,y,tscale,ng,man) -> #not sure is man is necessary - check on this
 
+    console.log("Hello")
     ###
 	    JSON file that contains the attribute and CSS properties for each 
     ###
-    cssData=null
-    $.ajax
-      url: 'scripts/config/cloud.json',
-      dataType: 'json',
-      async: false,
-      success: (data)->
-        cssData=data
+    cssData=findConfig('scripts/config/cloud.json')
+
 
     tipnum = 0 #Number of tip inside of the cloud 
     
@@ -107,7 +95,14 @@ window.objCloud = (dim,par,obj,x,y,tscale,ng,man) -> #not sure is man is necessa
         ###
            Attribute and css settings for the four objects above
         ###
-        $(ntc).css(cssData["ntcCSS"])
+        $(ntc).css({
+          "position":"absolute",
+          "z-index":"310",
+          "bottom":"-10%",
+          "right":"-5%",
+          "width":dim/2,
+          "height":dim/7
+        })
 
         $(nti).attr(cssData["ntiAttr"])
         $(nti).css(cssData["ntiCSS"])
@@ -161,11 +156,26 @@ window.objCloud = (dim,par,obj,x,y,tscale,ng,man) -> #not sure is man is necessa
         ngi = $('<img></img>')
         ngt = $('<div></div>')
       
-        $(ngco).css(cssData["ngcoCSS"])
+        $(ngco).css({
+                "position":"absolute",
+                "z-index":"310",
+                "bottom":"0%",
+                "right":"0%",
+                "width":dim/2,
+                "height":dim/7
+        })
+
         $(ngi).attr(cssData["ngiAttr"])
         $(ngi).css(cssData["ngiCSS"])
         
-        $(ngt).css(cssData["ngtCSS"])
+        $(ngt).css({
+          "position":"absolute",
+          "z-index":"302",
+          "top":"35%",
+          "text-align":"center",
+          "height":dim/10,
+          "width":"100%"
+        })
         ngt.innerHTML = "Next Game!"
         
         ###
@@ -231,7 +241,7 @@ window.objCloud = (dim,par,obj,x,y,tscale,ng,man) -> #not sure is man is necessa
     ###
         Specifies the CSS properties for the text
     ###
-    $(text).css({'font-size':(dim*.05*tscale) + 'px'}
+    $(text).css({'font-size':(dim*.05*tscale) + 'px'})
     left=0.125*dim # Width is 75%, leaving 25% left to play with
     $(text).css({"left":left+"px"})
 
@@ -239,5 +249,4 @@ window.objCloud = (dim,par,obj,x,y,tscale,ng,man) -> #not sure is man is necessa
         When closing the x button, the cloud goes away and the black backdrop is removed.
     ###
     $(xb).click(() -> $(cont).remove();$(backdrop).remove())
-
     return

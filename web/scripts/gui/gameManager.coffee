@@ -433,6 +433,7 @@ class window.GameManager
         @environment.stats.tipsCount +=1
         @storeStats()
         ma = @config?.code?.comments
+        console.log("Help")
         if ma
             if ma.length > 1
                 title =ma[0]

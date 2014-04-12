@@ -164,7 +164,7 @@ window.referencePage = () ->
 
   $(ref).css({width:'90%',height:'90%',position:'absolute',right:'5%',top:'5%','border':'1px solid black',"overflow":"auto"})
 
-  inject(ref)
+  ref.innerHTML = getTextFile('scripts/config/refUIData.txt')
 
   examples = $(ref).children(".ex")
 

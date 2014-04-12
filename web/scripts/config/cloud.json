@@ -94,5 +94,9 @@
     "rArrowHighAttr":{
         "src":"img/interface/rarrowhigh.png",
         "width":"15%"
+    },
+    "lArrowHighAttr":{
+        "src":"img/interface/larrowhigh.png",
+        "width":"15%"
     }
 }

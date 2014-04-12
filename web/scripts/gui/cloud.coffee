@@ -82,9 +82,9 @@ window.objCloud = (dim,par,obj,x,y,tscale,ng,man) -> #not sure is man is necessa
           ntr: the right arrow image
         ###
         ntc = $('<div></div>')
-        nti = $('<div></div>')
-        ntl = $('<div></div>')
-        ntr = $('<div></div>')
+        nti = $('<img></img>')
+        ntl = $('<img></img>')
+        ntr = $('<img></img>')
 
         ###
           Attribute and css settings for the four objects above
@@ -118,7 +118,7 @@ window.objCloud = (dim,par,obj,x,y,tscale,ng,man) -> #not sure is man is necessa
 
         $(ntl).click(() -> lb())
         $(ntl).hover(
-          () -> if(tipnum != 0) then $(ntl).attr(cssData["rArrowHighAttr"])
+          () -> if(tipnum != 0) then $(ntl).attr(cssData["lArrowHighAttr"])
           () -> $(ntl).attr(cssData["lArrowAttr"])
         )
 

@@ -1,7 +1,9 @@
 #!/bin/bash
 #This will install everything needed to run code moo locally.
 
-echo "We will install a few things and due to the node and nodejs package conflict we will use purge. If you are experienced with linux, look at the script first. If you dont have these packages already / don't care/ just trying to get code moo to work, type y. Type anything else to exit."
+echo "We will install a few things and due to the node and nodejs package conflict we will use purge.
+If you are experienced with linux, look at the script first. If you dont have these packages already 
+/ don't care/ just trying to get code moo to work, type y. Type anything else to exit."
 
 yes="y"
 
@@ -84,6 +86,8 @@ cd /var/www
 git clone http://github.com/bponnaluri/javaplayland.git
 coffee -c /var/www/javaplayland
 
-echo "If you are seeing this then everything should be okay. Apache should be running now and also start during startup."
+echo "If you are seeing this then everything should be okay. Apache should be running now and also
+start during startup."
 echo "You can access your local version by typing http://localhost/javaplayland/web/ in your browser."
-echo "Remember that you need to compile the coffeescript files everytime you make a change to them. You can do this by typing 'coffee -c /var/www/javaplayland' into a terminal."
+echo "Remember that you need to compile the coffeescript files everytime you make a change to them.
+You can do this by typing 'coffee -c /var/www/javaplayland' into a terminal."

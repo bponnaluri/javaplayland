@@ -14,7 +14,8 @@ installation was successful.
     to C:\xampp\htdocs so we will have C:\xampp\htdocs\javaplayland-master
 
 5.	Get back to the command prompt and enter “coffee –c C:\xampp\htdocs\javaplayland-master”. This
-    will compile all the coffee files into js files.
+    will compile all the coffee files into js files.If this does not work try 
+    “coffee –c \xampp\htdocs\javaplayland-master” or “coffee –-compile \xampp\htdocs\javaplayland-master”
 
 6.	You can access the local version of the project at http://localhost/javaplayland-master/web/ 
     assuming Xampp is running with Apache already started.

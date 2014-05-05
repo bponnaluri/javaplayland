@@ -160,7 +160,7 @@ window.referencePage = () ->
   $(backFade).attr({id:'bF'})
   $("body").prepend(refContainer)
 
-  ref = document.createElement("div")
+  inject(ref)
 
   $(ref).css({width:'90%',height:'90%',position:'absolute',right:'5%',top:'5%','border':'1px solid black',"overflow":"auto"})
 

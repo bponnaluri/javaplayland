@@ -146,24 +146,24 @@ root.drawGameMap = (player) ->
 
   for quest in root.quests
     span = document.createElement("span")
-    
+
     $(span).attr {
       class: "span" + (++qcount)
       alt: "Click here to hide/show all levels in this quest."
       title: "Click here to hide/show all levels in this quest."
-    }	
+    }
 
     $(span).css {
-     "min-width": "450px"
-     "min-height": "32px"
-     "padding": "5px"
-     "display": "inline-block"
-     "white-space": "nowrap"
-     "border": "1px dashed orange"
-     "background-color": "#ffa500"
-     "text-align": "center"
-     "font-family": "Monospace"
-     "cursor": "pointer"
+      "min-width": "450px"
+      "min-height": "32px"
+      "padding": "5px"
+      "display": "inline-block"
+      "white-space": "nowrap"
+      "border": "1px dashed orange"
+      "background-color": "#ffa500"
+      "text-align": "center"
+      "font-family": "Monospace"
+      "cursor": "pointer"
     }
 
     $(tmp1).append span
@@ -171,13 +171,13 @@ root.drawGameMap = (player) ->
     $(span).append "<b>QUEST " + qcount + ": " + quest.title + "</b>"
 
     span.click (clickEvent) ->
-        jQuery("span[id='#{clickEvent.currentTarget.id} Container']").children().toggle()
-        return
+      jQuery("span[id='#{clickEvent.currentTarget.id} Container']").children().toggle()
+      return
 
     games = jQuery '<span>', {
-        id: "#{quest.title} Container"
-    }    
-     
+      id: "#{quest.title} Container"
+    }
+
     for gameKey in quest.games
       addGameToMap gameKey, games
 
@@ -185,7 +185,7 @@ root.drawGameMap = (player) ->
     currGameIdx = currGameIdx + quest.games.length
     arrayOfIdx[qcount - 1] = currGameIdx
     $("<br><br>").appendTo tmp1 #Lavanya
-    
+
   selectCount = 1 #Lavanya
   whileCounter = 0
   arrayOfStrings = []
@@ -659,7 +659,7 @@ root.addHintsToCode = (gameData) ->
     one = '// '+ ((gameData.code.comments.join('\n')).replace(/\n/g,'\n// '))+ '\n'
     # Hints go in prefix if it exists, otherwise they are prepended to the main area
     if (gameData.code.prefix.length > 1) # Ignore lonely \n
-       gameData.code.prefix = one + gameData.code.prefix
+      gameData.code.prefix = one + gameData.code.prefix
     else
       gameData.code.initial = one + '\n' + gameData.code.initial
   return

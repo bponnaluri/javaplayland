@@ -159,7 +159,7 @@ window.objCloud = (dim,par,obj,x,y,tscale,ng,man) -> #not sure is man is necessa
           Finishes the current game and starts the next game when you click on the "next game" cloud
           TODO: Debug this method
         ###
-        #$(ngco).click(() -> man.finishGame();codeland.startGame(ng);$(cont).remove();$(backdrop).remove();)
+        $(ngco).click(() -> man.finishGame();codeland.startGame(ng);$(cont).remove();$(backdrop).remove())
 
 
 

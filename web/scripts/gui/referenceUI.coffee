@@ -197,95 +197,94 @@ setUpExample = (dive) ->
     setUpJavaSandbox(i,o,text)
 
 setUpJavaSandbox = (input, output, texti) ->
-    ###
-        Sets up the code editor and the doppio api for running Java code.
-    ###
-    input = $(input)
-    output = $(output)
-    textOutput = $('<div ></div>')
-    output.append textOutput.get 0
-    textOutput.css {"white-space": "pre-line","font-family": "monospace","overflow":"auto"}
-    input.append '<div id="javasandboxsource'+editorCount+'"></div>'
-    sandBoxEditor = new PlayerCodeEditor \
-        'javasandboxsource'+editorCount, # editorDivId
-        null,                            # commands
-        texti,                           # codeText
-        false,                           # wrapCode
-        "",                              # codePrefix
-        "",                              # codeSuffix
-        null,                            # hiddenSuffix
-        true,                            # freeEdit
-        null                            # interpreter
-    editorCount++
-    # See http://stackoverflow.com/questions/11584061/automatically-adjust-height-to-contents-in-ace-cloud9-editor
+  ###
+      Sets up the code editor and the doppio api for running Java code.
+  ###
+  input = $(input)
+  output = $(output)
+  textOutput = $('<div ></div>')
+  output.append textOutput.get 0
+  textOutput.css {"white-space": "pre-line","font-family": "monospace","overflow":"auto"}
+  input.append '<div id="javasandboxsource'+editorCount+'"></div>'
+  sandBoxEditor = new PlayerCodeEditor \
+      'javasandboxsource'+editorCount, # editorDivId
+      null,                            # commands
+      texti,                           # codeText
+      false,                           # wrapCode
+      "",                              # codePrefix
+      "",                              # codeSuffix
+      null,                            # hiddenSuffix
+      true,                            # freeEdit
+      null                            # interpreter
+  editorCount++
+  # See http://stackoverflow.com/questions/11584061/automatically-adjust-height-to-contents-in-ace-cloud9-editor
 
-    msg = ""
-    stdout = (str) ->
-        msg += str
-        textOutput.text msg
-        return
-    log = (mesg) -> console.log mesg
+  msg = ""
+  stdout = (str) ->
+      msg += str
+      textOutput.text msg
+      return
+  log = (mesg) -> console.log mesg
 
 
-    run = $ '<img>', {
-        id: 'runCode'+editorCount,
-        src: 'img/freeware/button_play_green-48px.png',
-        css: {'max-height':'19%', 'display':'block', 'min-height': '24px'},
-        alt: 'Run Button',
-        title:'Run the program',
-        click: (e) ->
-            textOutput.text 'Running...'
-            $(this).hide()
-            $(this).siblings("img").show()
+  run = $ '<img>', {
+      id: 'runCode'+editorCount,
+      src: 'img/freeware/button_play_green-48px.png',
+      css: {'max-height':'19%', 'display':'block', 'min-height': '24px'},
+      alt: 'Run Button',
+      title:'Run the program',
+      click: (e) ->
+          textOutput.text 'Running...'
+          $(this).hide()
+          $(this).siblings("img").show()
 
-            msg = ''
-            finished_cb = =>
-                #Ensure "Running..." is removed even if nothing was printed by the Java program
-                stdout('')
-                $(this).show()
-                $(this).siblings("img").hide()
-            codeland.doppioAPI.abort()
-            codeland.doppioAPI.setOutputFunctions stdout, log
-            srcText  = sandBoxEditor.getStudentCode()
-            if(srcText.indexOf("class") != -1)
-                stdout('Classes are not yet supported by our Web-based Java')
-                finished_cb()
-            else
-                codeland.doppioAPI.run(srcText,null, finished_cb)
+          msg = ''
+          finished_cb = =>
+              #Ensure "Running..." is removed even if nothing was printed by the Java program
+              stdout('')
+              $(this).show()
+              $(this).siblings("img").hide()
+          codeland.doppioAPI.abort()
+          codeland.doppioAPI.setOutputFunctions stdout, log
+          srcText  = sandBoxEditor.getStudentCode()
+          if(srcText.indexOf("class") != -1)
+              stdout('Classes are not yet supported by our Web-based Java')
+              finished_cb()
+          else
+              codeland.doppioAPI.run(srcText,null, finished_cb)
 
-            e.preventDefault()
-            return
-    }
-    abort = $ '<img>', {
-        id: 'abortCode'+editorCount,
-        src: 'img/freeware/button_stop_red-48px.png',
-        css: {'max-height':'19%', 'display':'block', 'min-height': '24px'},
-        alt: 'Abort Button',
-        title: 'Stop the currently running program',
-        click: (e) ->
-            aborted = =>
-                stdout("Stopped")
-                $(this).siblings("img").show()
-                $(this).hide()
-            codeland.doppioAPI.abort(aborted)
-            e.preventDefault()
-            return
-    }
-    abort.hide()
-    input.append run.get 0
-    input.append abort.get 0
-    return
+          e.preventDefault()
+          return
+  }
+  abort = $ '<img>', {
+      id: 'abortCode'+editorCount,
+      src: 'img/freeware/button_stop_red-48px.png',
+      css: {'max-height':'19%', 'display':'block', 'min-height': '24px'},
+      alt: 'Abort Button',
+      title: 'Stop the currently running program',
+      click: (e) ->
+          aborted = =>
+              stdout("Stopped")
+              $(this).siblings("img").show()
+              $(this).hide()
+          codeland.doppioAPI.abort(aborted)
+          e.preventDefault()
+          return
+  }
+  abort.hide()
+  input.append run.get 0
+  input.append abort.get 0
+  return
 
 
 window.AboutPage = () ->
 
   closeClick = () ->
-    $(backFade).remove()
-    $(refContainer).remove()
+      $(backFade).remove()
+      $(refContainer).remove()
 
-
-    backFade = $('<div></div>')
-    refContainer = $('<div></div>')
+    backFade = document.createElement("div")
+    refContainer = document.createElement("div")
 
     $(backFade).css({width:'100%',height:'100%',position:'absolute','z-index':'300','background-color':'#000000','opacity':'.5'})
     $(refContainer).css({ width:'60%',height:'60%',left:'30%',top:'30%',position:'absolute','z-index':'301','background-color':'#FFFFFF'})
@@ -294,8 +293,8 @@ window.AboutPage = () ->
     $(backFade).attr({id:'bF'})
     $("body").prepend(refContainer)
 
-    header = $('<div></div>')
-    para = $('<div></div>')
+    header = document.createElement("div")
+    para = document.createElement("div")
 
     $(header).css({"position":"static","overflow":"auto","font-size":"26px","width":"100%","left":"25%","text-align":"center"})
     $(para).css({"overflow":"auto","max-height":"75%","position":"static"})
@@ -325,16 +324,10 @@ window.AboutPage = () ->
     <br>
     We wish to thank CJ Carey, John Vilk and the other developers of Doppio-JVM (a project by the <a href='http://plasma.cs.umass.edu/'>Plasma research group at UMass</a>)</a> and BrowserFS for use of their software and their support of this project.<br>
     <em>Software development and bug contribution</em><br>
-  <br>
-    Original software created by University of Illinois students and faculty, Chris Liu, Fabian Junge, James Kelly and Lawrence Angrave.
+    Original software created by University of Illinois students and faculty, Chris Liu, Fabian Junge, James Kelly and Lawrence Angrave.<br>Additional Development done by Bharat Ponnaluri,Yi Gao, Julia Syi, Lavanya Iyer, and Noyan Baykal
     <br/>
     "
 
   $(refContainer).append(header)
   $(refContainer).append(para)
   $("#bF").click(closeClick)
-
-
-
-
-

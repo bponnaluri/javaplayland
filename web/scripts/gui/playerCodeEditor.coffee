@@ -223,6 +223,13 @@ class window.EditorManager
 
 
             button.attr 'title',@toUsesRemainingText(usesRemaining, @commands[command].maxUses)
+            # Sets background image for user visual feedback on amount of button presses remaining 
+            roundtotenth = usesRemaining/ @commands[command].maxUses 
+            roundtotenth *= 10 
+            roundtotenth = Math.round(roundtotenth) 
+            urlvalue = 'url("img/buttoncount/button' + roundtotenth + '.png")' 
+            button.css 'background-image', urlvalue 
+            button.css 'background-size', '100%'
             if usesRemaining <= 0
                 button.attr 'disabled', true
                 if usesRemaining < 0
@@ -251,7 +258,7 @@ class window.EditorManager
            ace_gutter-active-line refers to line highlighting in the game level code editor (look at ace.js)
         ###
         highlighted_line_position = $('.ace_gutter-active-line').position()
-		
+
         if maxrows == row + 1
             $(".ace_downarrow").css({"display":"none"})
         else
@@ -264,7 +271,7 @@ class window.EditorManager
 
         ###
             Fixing the "top" property by only setting it when highlighted_line_position is not null - temporary HACK HACK HACK!!!
-			TODO: Why the top property is null and why we need this hack
+            TODO: Why the top property is null and why we need this hack
         ###
         if highlighted_line_position != null
             $(@acelne).css({"top":highlighted_line_position.top-aglh*1.5+"px"})
